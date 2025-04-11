@@ -1,3 +1,89 @@
 @import "tailwindcss" theme(static);
 @source "../views/";
 @source "../../app/";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  body {
+    @apply font-sans text-base antialiased;
+  }
+}
+
+/* Sobrescribir el estilo global de los enlaces */
+nav ul li a {
+  text-decoration: none !important;
+  transition: text-decoration 0.2s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a:active {
+  text-decoration: underline !important;
+  transition: text-decoration 0.2s ease-in-out;
+}
+
+@layer components {
+  .menu-link {
+    @apply no-underline;
+  }
+  
+  .menu-link:hover,
+  .menu-link:focus,
+  .menu-link:active {
+    @apply underline;
+  }
+}
+
+/* Estilos para el botón ESPECIALES */
+.btn-especiales {
+  border-radius: 0 12px;
+  border: 1.5px solid #09B2F5;
+  background: #1D447A;
+  padding: 8px 16px;
+}
+
+.btn-especiales-text {
+  color: #1BC6EB;
+  text-align: right;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15.31px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 6.635px;
+  letter-spacing: 0.153px;
+  text-transform: uppercase;
+}
+
+.btn-multimedia-text {
+  color: #FFF;
+  text-align: right;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15.31px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 6.635px;
+  letter-spacing: 0.153px;
+  text-transform: uppercase;
+}
+
+/* Animación del News Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  white-space: nowrap;
+}
