@@ -6,7 +6,7 @@ Este archivo tiene como objetivo proporcionar a una inteligencia artificial (IA)
 ---
 
 ## 🚀 Objetivo del Proyecto
-Crear un tema personalizado de WordPress basado en un diseño de Figma, utilizando el framework **Sage**, **Blade** como motor de plantillas, y **Tailwind CSS** como sistema de estilos. Todo el desarrollo se realiza localmente usando el IDE **Cursor**, y posteriormente se desplegará en un servidor de prueba.
+Crear un tema personalizado de WordPress basado en un diseño de Figma, utilizando el framework **Sage**, **Blade** como motor de plantillas, y **Tailwind CSS** como sistema de estilos. Todo el desarrollo se realiza localmente y posteriormente se desplegará en un servidor de prueba.
 
 ---
 
