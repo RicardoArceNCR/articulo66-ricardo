@@ -2,6 +2,17 @@
 
 @section('content')
   @include('partials.page-header')
+  @include('sections.destacados')
+  @include('sections.principales')
+  @include('sections.publicidad')
+  @include('sections.nacionales')
+  @include('sections.politica')
+  @include('sections.publicidad')
+  @include('sections.internacionales')
+  @include('sections.show')
+  @include('sections.multimedia')
+  @include('sections.podcasts')
+  @include('sections.especiales')
 
   @if (! have_posts())
     <x-alert type="warning">

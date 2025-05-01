@@ -2,6 +2,9 @@
 @source "../views/";
 @source "../../app/";
 
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +16,23 @@
   
   body {
     @apply font-sans text-base antialiased;
+  }
+
+  /* Sobrescribir el estilo de WordPress para los enlaces */
+  a:where(:not(.wp-element-button)) {
+    text-decoration: none !important;
+  }
+
+  /* Regla específica para los enlaces dentro de artículos */
+  article a {
+    text-decoration: none !important;
+  }
+}
+
+/* Estilos específicos para el slider de principales en móvil */
+@media (max-width: 767px) {
+  .swiper-principales .swiper-slide {
+    width: 85%;
   }
 }
 

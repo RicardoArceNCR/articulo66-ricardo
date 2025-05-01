@@ -58,3 +58,18 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+/**
+ * Register sidebars
+ */
+add_action('widgets_init', function () {
+    register_sidebar([
+        'name'          => __('Publicidad Sidebar', 'sage'),
+        'id'            => 'sidebar-publicidad',
+        'description'   => __('Widgets para publicidad en el sidebar', 'sage'),
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>'
+    ]);
+});
