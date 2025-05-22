@@ -9,92 +9,97 @@
       </div>
       
       <div class="grid lg:grid-cols-2 gap-6">
-        {{-- Noticias Principales --}}
-        <article class="relative group">
-          <a href="#" class="block">
-            <div class="relative aspect-[348/245] w-full">
-              <img src="https://placehold.co/348x243" alt="¡Advertencia! Estados Unidos pondrá especial atención" 
-                   class="w-full h-full object-cover">
-              <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
-              <div class="absolute bottom-0 left-0 p-4 z-10">
-                <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">¡Advertencia! Estados Unidos pondrá especial atención a la «competencia desleal» que promueve el régimen de Ortega</h3>
-                <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">Por Marling Balmaceda</span>
-              </div>
-            </div>
-          </a>
-        </article>
+        @php
+          $destacado1 = get_field('nacionales_destacado_1', 'option');
+          $destacado2 = get_field('nacionales_destacado_2', 'option');
+          $categoria_nacionales = get_category_by_slug('nacionales');
+          
+          if (!$destacado1 || !$destacado2) {
+            $args = [
+              'post_type' => 'post',
+              'posts_per_page' => 2,
+              'cat' => $categoria_nacionales->term_id,
+              'orderby' => 'date',
+              'order' => 'DESC'
+            ];
+            $recientes = new WP_Query($args);
+          }
+        @endphp
 
-        <article class="relative group">
-          <a href="#" class="block">
-            <div class="relative aspect-[348/245] w-full">
-              <img src="https://placehold.co/348x243" alt="La Corte Interamericana de Derechos Humanos" 
-                   class="w-full h-full object-cover">
-              <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
-              <div class="absolute bottom-0 left-0 p-4 z-10">
-                <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">La Corte Interamericana de Derechos Humanos ordenó a Nicaragua que libere en forma «inmediata» al periodista Leo</h3>
-                <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">Por AFP</span>
+        {{-- Noticias Principales --}}
+        @if($destacado1)
+          <article class="relative group">
+            <a href="{{ get_permalink($destacado1->ID) }}" class="block">
+              <div class="relative aspect-[348/245] w-full">
+                <img src="{{ get_the_post_thumbnail_url($destacado1->ID, 'large') }}" 
+                     alt="{{ $destacado1->post_title }}" 
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
+                <div class="absolute bottom-0 left-0 p-4 z-10">
+                  <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">
+                    {{ $destacado1->post_title }}
+                  </h3>
+                  <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">
+                    Por {{ get_the_author_meta('display_name', $destacado1->post_author) }}
+                  </span>
+                </div>
               </div>
-            </div>
-          </a>
-        </article>
+            </a>
+          </article>
+        @elseif($recientes->have_posts())
+          @while($recientes->have_posts()) @php($recientes->the_post())
+            <article class="relative group">
+              <a href="{{ get_permalink() }}" class="block">
+                <div class="relative aspect-[348/245] w-full">
+                  <img src="{{ get_the_post_thumbnail_url(get_the_ID(), 'large') }}" 
+                       alt="{{ get_the_title() }}" 
+                       class="w-full h-full object-cover">
+                  <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
+                  <div class="absolute bottom-0 left-0 p-4 z-10">
+                    <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">
+                      {{ get_the_title() }}
+                    </h3>
+                    <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">
+                      Por {{ get_the_author_meta('display_name', get_the_author_meta('ID')) }}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          @endwhile
+          @php(wp_reset_postdata())
+        @endif
+
+        @if($destacado2)
+          <article class="relative group">
+            <a href="{{ get_permalink($destacado2->ID) }}" class="block">
+              <div class="relative aspect-[348/245] w-full">
+                <img src="{{ get_the_post_thumbnail_url($destacado2->ID, 'large') }}" 
+                     alt="{{ $destacado2->post_title }}" 
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
+                <div class="absolute bottom-0 left-0 p-4 z-10">
+                  <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">
+                    {{ $destacado2->post_title }}
+                  </h3>
+                  <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">
+                    Por {{ get_the_author_meta('display_name', $destacado2->post_author) }}
+                  </span>
+                </div>
+              </div>
+            </a>
+          </article>
+        @endif
 
         {{-- Noticias Secundarias --}}
-        <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
-          {{-- Noticia Secundaria 1 --}}
-          <article class="flex gap-4 items-start">
-            <div class="w-[105px] h-[80px] flex-shrink-0">
-              <img src="https://placehold.co/105x80" alt="Ortega cancela más concesiones mineras" 
-                   class="w-full h-full object-cover">
-            </div>
-            <div class="flex-grow">  
-              <h3 class="text-black font-['Raleway'] text-[14px] font-semibold leading-[21px] tracking-[-0.42px]">Ortega cancela más concesiones mineras y las declara de uso del Estado</h3>
-       
-              <span class="text-[#1D447A] font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px] block mb-1">Por Artículo 66</span>
-                 </div>
-          </article>
-
-          {{-- Noticia Secundaria 2 --}}
-          <article class="flex gap-4 items-start">
-            <div class="w-[105px] h-[80px] flex-shrink-0">
-              <img src="https://placehold.co/105x80" alt="Corte IDH ordena al Estado de Nicaragua" 
-                   class="w-full h-full object-cover">
-            </div>
-            <div class="flex-grow">
-              <h3 class="text-black font-['Raleway'] text-[14px] font-semibold leading-[21px] tracking-[-0.42px]">Corte IDH ordena al Estado de Nicaragua liberar al periodista Leo Cárcamo, detenido hace dos meses</h3>
-              <span class="text-[#1D447A] font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px] block mb-1">Por Artículo 66</span>
-            </div>
-          </article>
-
-          {{-- Noticia Secundaria 3 --}}
-          <article class="flex gap-4 items-start">
-            <div class="w-[105px] h-[80px] flex-shrink-0">
-              <img src="https://placehold.co/105x80" alt="Daniel Ortega no confirma" 
-                   class="w-full h-full object-cover">
-            </div>
-            <div class="flex-grow">
-               <h3 class="text-black font-['Raleway'] text-[14px] font-semibold leading-[21px] tracking-[-0.42px]">Daniel Ortega no confirma si acompañará a Nicolás Maduro en la cuestionada investidura presidencial</h3>
-               <span class="text-[#1D447A] font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px] block mb-1">Por Artículo 66</span>
-               </div>
-          </article>
-
-          {{-- Noticia Secundaria 4 --}}
-          <article class="flex gap-4 items-start">
-            <div class="w-[105px] h-[80px] flex-shrink-0">
-              <img src="https://placehold.co/105x80" alt="La razón del cierre de Save the Children" 
-                   class="w-full h-full object-cover">
-            </div>
-            <div class="flex-grow">
-               <h3 class="text-black font-['Raleway'] text-[14px] font-semibold leading-[21px] tracking-[-0.42px]">La razón del cierre de Save the Children International en Nicaragua: «Hay insuficiencia de fondos para...</h3>
-               <span class="text-[#1D447A] font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px] block mb-1">Por AFP</span>
-               </div>
-          </article>
-        </div>
+        @include('sections.partials.nacionales-secundarias')
       </div>
     </div>
 
     {{-- Sidebar --}}
     <div class="lg:col-span-1">
       <div class="space-y-6">
+        {{-- Widget de Más Leídas --}}
         <div class="mas-leidas">
           <div class="flex items-center justify-center gap-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="48" viewBox="0 0 25 48" fill="none">
@@ -113,49 +118,8 @@
             </div>
           </div>
 
-          <div class="space-y-4">
-            {{-- Noticia más leída 1 --}}
-            <article class="group">
-              <a href="#" class="flex gap-3 no-underline">
-                <div class="w-[80px] h-[80px] flex-shrink-0 overflow-hidden rounded-full">
-                  <img src="https://placehold.co/400x200" alt="González Urrutia entrega las actas electorales" 
-                       class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <div class="flex-grow">
-                  <span class="inline-block px-2 py-1 text-white text-[11px] font-bold leading-none tracking-[0.11px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] rounded-sm mb-2">ESPECIAL</span>
-                  <h4 class="text-black text-[15px] font-[600] leading-[21px] tracking-[-0.45px] font-['Raleway'] group-hover:underline">González Urrutia entrega las actas electorales a Panamá bajo su custodia</h4>
-                </div>
-              </a>
-            </article>
-
-            {{-- Noticia más leída 2 --}}
-            <article class="group">
-              <a href="#" class="flex gap-3 no-underline">
-                <div class="w-[80px] h-[80px] flex-shrink-0 overflow-hidden rounded-full">
-                  <img src="https://placehold.co/400x200" alt="Detienen a alto cargo del FBI" 
-                       class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <div class="flex-grow">
-                  <span class="inline-block px-2 py-1 text-white text-[11px] font-bold leading-none tracking-[0.11px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] rounded-sm mb-2">ESPECIAL</span>
-                  <h4 class="text-black text-[15px] font-[600] leading-[21px] tracking-[-0.45px] font-['Raleway'] group-hover:underline">Detienen a alto cargo del FBI en Venezuela, según Maduro</h4>
-                </div>
-              </a>
-            </article>
-
-            {{-- Noticia más leída 3 --}}
-            <article class="group">
-              <a href="#" class="flex gap-3 no-underline">
-                <div class="w-[80px] h-[80px] flex-shrink-0 overflow-hidden rounded-full">
-                  <img src="https://placehold.co/400x200" alt="Adela, Gabriela y Mayela" 
-                       class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <div class="flex-grow">
-                  <span class="inline-block px-2 py-1 text-white text-[11px] font-bold leading-none tracking-[0.11px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] rounded-sm mb-2">ESPECIAL</span>
-                  <h4 class="text-black text-[15px] font-[600] leading-[21px] tracking-[-0.45px] font-['Raleway'] group-hover:underline">Adela, Gabriela y Mayela, las tres nicas desterradas a Guatemala por quemar la bandera del FSLN</h4>
-                </div>
-              </a>
-            </article>
-          </div>
+          {{-- Aquí irá el widget de más leídas --}}
+          <?php dynamic_sidebar('nacionales-portada'); ?>
         </div>
 
         {{-- Espacio publicitario --}}

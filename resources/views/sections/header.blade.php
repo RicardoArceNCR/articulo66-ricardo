@@ -46,7 +46,7 @@
         {{-- Redes Sociales --}}
         <div class="flex items-center gap-4">
           {{-- Facebook --}}
-          <a href="#" class="block">
+          <a href="https://www.facebook.com/Articulo66/" class="block">
             <span class="sr-only">Facebook</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="21" viewBox="0 0 11 21" fill="none">
               <path d="M10.6572 9.63541L10.4014 11.6893C10.3582 12.0323 10.0676 12.2904 9.72298 12.2904H6.39648V20.8775C6.04567 20.9092 5.69022 20.9254 5.33091 20.9254C4.5273 20.9254 3.743 20.8451 2.98497 20.6921V12.2904H0.426535C0.191632 12.2904 0 12.098 0 11.8624V9.29232C0 9.05665 0.191632 8.86424 0.426535 8.86424H2.98497V5.00997C2.98497 2.64471 4.89433 0.727626 7.25032 0.727626H10.2353C10.4702 0.727626 10.6618 0.92003 10.6618 1.15571V3.72573C10.6618 3.96141 10.4702 4.15381 10.2353 4.15381H8.10262C7.16069 4.15381 6.39725 4.92034 6.39725 5.86691V8.86502H9.97952C10.3906 8.86502 10.7082 9.22664 10.658 9.63618L10.6572 9.63541Z" fill="#AFB2B8"/>
@@ -54,7 +54,7 @@
           </a>
 
           {{-- Twitter --}}
-          <a href="#" class="block">
+          <a href="https://x.com/articulo66nica" class="block">
             <span class="sr-only">Twitter</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17" fill="none">
   <path d="M11.8298 7.41598L18.0401 0.773778H15.6818L10.8075 5.98801L7.07459 0.773778H0.624023L7.15341 9.89482L0.624023 16.8793H2.98233L8.17647 11.3236L12.1536 16.8793H18.6042L11.8298 7.41675V7.41598ZM3.94744 2.48224H6.19602L15.28 15.1709H13.0314L3.94744 2.48224Z" fill="#AFB2B8"/>
@@ -62,7 +62,7 @@
           </a>
 
           {{-- Instagram --}}
-          <a href="#" class="block">
+          <a href="https://www.instagram.com/articulo66/" class="block">
             <span class="sr-only">Instagram</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
   <path d="M12.7835 0.773778H4.45292C2.30634 0.773778 0.56543 2.51469 0.56543 4.66127V12.9918C0.56543 15.1384 2.30634 16.8793 4.45292 16.8793H12.7835C14.9301 16.8793 16.671 15.1384 16.671 12.9918V4.66127C16.671 2.51469 14.9301 0.773778 12.7835 0.773778ZM15.2824 12.7137C15.2824 14.2467 14.0384 15.4908 12.5053 15.4908H4.73033C3.19727 15.4908 1.95321 14.2467 1.95321 12.7137V4.93867C1.95321 3.40562 3.19727 2.16156 4.73033 2.16156H12.5053C14.0384 2.16156 15.2824 3.40562 15.2824 4.93867V12.7137Z" fill="#AFB2B8"/>
@@ -72,7 +72,7 @@
           </a>
 
           {{-- YouTube --}}
-          <a href="#" class="block">
+          <a href="https://www.youtube.com/channel/UCYtZARRuGWK9wV49RBmmFfw" class="block">
             <span class="sr-only">YouTube</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
   <path d="M12.7835 0.773778H4.45292C2.30634 0.773778 0.56543 2.51469 0.56543 4.66127V12.9918C0.56543 15.1384 2.30634 16.8793 4.45292 16.8793H12.7835C14.9301 16.8793 16.671 15.1384 16.671 12.9918V4.66127C16.671 2.51469 14.9301 0.773778 12.7835 0.773778ZM15.2824 12.7137C15.2824 14.2467 14.0384 15.4908 12.5053 15.4908H4.73033C3.19727 15.4908 1.95321 14.2467 1.95321 12.7137V4.93867C1.95321 3.40562 3.19727 2.16156 4.73033 2.16156H12.5053C14.0384 2.16156 15.2824 3.40562 15.2824 4.93867V12.7137Z" fill="#AFB2B8"/>
@@ -182,13 +182,60 @@
       {{-- Degradado derecho --}}
       <div class="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-[#E7E7E7] to-transparent z-10"></div>
       {{-- Contenido del ticker --}}
-      <div class="animate-marquee inline-block relative">
-        <span class="mx-4 text-[#929292] font-['Raleway'] text-[12px] md:text-xs font-semibold leading-[26px] tracking-[0.48px] uppercase">¡ADVERTENCIA! ESTADOS UNIDOS PONDRÁ ESPECIAL ATENCIÓN A LA «COMPETENCIA DESLEAL» QUE PROMUEVE EL RÉGIMEN DE ORTEGA</span>
-        <div class="inline-block mx-4 w-[3px] h-[29px] bg-[#929292] align-middle"></div>
-        <span class="mx-4 text-[#929292] font-['Raleway'] text-[12px] md:text-xs font-semibold leading-[26px] tracking-[0.48px] uppercase">Segunda noticia importante aquí</span>
-        <div class="inline-block mx-4 w-[3px] h-[29px] bg-[#929292] align-middle"></div>
-        <span class="mx-4 text-[#929292] font-['Raleway'] text-[12px] md:text-xs font-semibold leading-[26px] tracking-[0.48px] uppercase">Tercera noticia importante aquí</span>
+      @php
+        $args = [
+          'post_type' => 'post',
+          'posts_per_page' => 8,
+          'orderby' => 'date',
+          'order' => 'DESC'
+        ];
+        $ultimas_noticias = new WP_Query($args);
+      @endphp
+      <div class="ticker-content inline-block relative">
+        @while($ultimas_noticias->have_posts()) @php($ultimas_noticias->the_post())
+          <a href="{{ get_permalink() }}" class="mx-4 text-[#929292] font-['Raleway'] text-[12px] md:text-xs font-semibold leading-[26px] tracking-[0.48px] uppercase hover:text-[#1D447A]">
+            {{ get_the_title() }}
+          </a>
+          @if(!$ultimas_noticias->current_post == $ultimas_noticias->post_count - 1)
+            <div class="inline-block mx-4 w-[3px] h-[29px] bg-[#929292] align-middle"></div>
+          @endif
+        @endwhile
+        @php(wp_reset_postdata())
       </div>
     </div>
   </div>
 </div>
+
+<style>
+.ticker-content {
+  white-space: nowrap;
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tickerContent = document.querySelector('.ticker-content');
+  const containerWidth = tickerContent.parentElement.offsetWidth;
+  const contentWidth = tickerContent.offsetWidth;
+  
+  // Velocidad base en píxeles por segundo (más lenta)
+  const baseSpeed = 30;
+  
+  // Calcular la duración basada en el ancho del contenido
+  const duration = (contentWidth / baseSpeed) * 1000;
+  
+  // Aplicar la animación
+  tickerContent.style.animation = `marquee ${duration}ms linear infinite`;
+});
+</script>

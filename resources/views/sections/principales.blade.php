@@ -2,73 +2,112 @@
 <section class="container mx-auto px-4 py-8 overflow-hidden">
   <div class="swiper-principales md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-4">
     <div class="swiper-wrapper md:!contents">
-      {{-- Artículo 1 --}}
-      <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
-        <a href="#" class="block no-underline">
-          <div class="relative h-[200px] md:h-[250px] overflow-hidden mb-4">
-            <img src="https://placehold.co/400x200" alt="Daniel Ortega no confirma si acompañará a Nicolás Maduro" 
-                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-          </div>
-          <div class="space-y-3">
-            <div class="flex">
-              <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">Por Artículo 66</span>
-            </div>
-            <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[21px] font-['Raleway'] no-underline hover:underline active:underline">Daniel Ortega no confirma si acompañará a Nicolás Maduro en la cuestionada investidura presidencial</h3>
-            <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">A menos de 24 horas para que Nicolás Maduro asuma un tercer periodo consecutivo como presidente de Venezuela, tras unas comicios altamente cuestionados por la oposición...</p>
-          </div>
-        </a>
-      </article>
+      @php
+        $principal1 = get_field('principal_1', 'option');
+        $principal2 = get_field('principal_2', 'option');
+        $principal3 = get_field('principal_3', 'option');
+        $principal4 = get_field('principal_4', 'option');
+      @endphp
 
-      {{-- Artículo 2 --}}
-      <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
-        <a href="#" class="block no-underline">
-          <div class="relative h-[200px] md:h-[250px] overflow-hidden mb-4">
-            <img src="https://placehold.co/400x200" alt="Corte IDH ordena al Estado de Nicaragua liberar al periodista Leo Cárcamo" 
-                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-          </div>
-          <div class="space-y-3">
-            <div class="flex">
-              <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">Por Artículo 66</span>
+      @if($principal1)
+        <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
+          <a href="{{ get_permalink($principal1->ID) }}" class="block no-underline">
+            <div class="relative h-[200px] md:h-[250px] overflow-hidden mb-4">
+              <img src="{{ get_the_post_thumbnail_url($principal1->ID, 'medium') }}" 
+                   alt="{{ $principal1->post_title }}" 
+                   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
-            <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[21px] font-['Raleway'] no-underline hover:underline active:underline">Corte IDH ordena al Estado de Nicaragua liberar al periodista Leo Cárcamo, detenido hace dos meses</h3>
-            <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">La Corte Interamericana de Derechos Humanos ordenó a Nicaragua que libere en forma inmediata al periodista Leo Cárcamo, detenido en noviembre de 2024 y cuyo...</p>
-          </div>
-        </a>
-      </article>
+            <div class="space-y-3">
+              <div class="flex">
+                <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                  Por {{ get_the_author_meta('display_name', $principal1->post_author) }}
+                </span>
+              </div>
+              <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[21px] font-['Raleway'] no-underline hover:underline active:underline">
+                {{ $principal1->post_title }}
+              </h3>
+              <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
+                {{ get_the_excerpt($principal1->ID) }}
+              </p>
+            </div>
+          </a>
+        </article>
+      @endif
 
-      {{-- Artículo 3 --}}
-      <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
-        <a href="#" class="block no-underline">
-          <div class="relative h-[200px] md:h-[250px] overflow-hidden mb-4">
-            <img src="https://placehold.co/400x200" alt="¡Advertencia! Estados Unidos pondrá especial atención" 
-                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-          </div>
-          <div class="space-y-3">
-            <div class="flex">
-              <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">Por Artículo 66</span>
+      @if($principal2)
+        <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
+          <a href="{{ get_permalink($principal2->ID) }}" class="block no-underline">
+            <div class="relative h-[200px] md:h-[250px] overflow-hidden mb-4">
+              <img src="{{ get_the_post_thumbnail_url($principal2->ID, 'medium') }}" 
+                   alt="{{ $principal2->post_title }}" 
+                   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
-            <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[21px] font-['Raleway'] no-underline hover:underline active:underline">¡Advertencia! Estados Unidos pondrá especial atención a la «competencia desleal»</h3>
-            <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">El opositor venezolano Edmundo González Urrutia entregó este miércoles en custodia al gobierno de Panamá las actas de las elecciones que asegura...</p>
-          </div>
-        </a>
-      </article>
+            <div class="space-y-3">
+              <div class="flex">
+                <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                  Por {{ get_the_author_meta('display_name', $principal2->post_author) }}
+                </span>
+              </div>
+              <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[21px] font-['Raleway'] no-underline hover:underline active:underline">
+                {{ $principal2->post_title }}
+              </h3>
+              <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
+                {{ get_the_excerpt($principal2->ID) }}
+              </p>
+            </div>
+          </a>
+        </article>
+      @endif
 
-      {{-- Artículo 4 --}}
-      <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
-        <a href="#" class="block no-underline">
-          <div class="relative h-[200px] md:h-[250px] overflow-hidden mb-4">
-            <img src="https://placehold.co/400x200" alt="La razón del cierre de Save the Children International" 
-                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-          </div>
-          <div class="space-y-3">
-            <div class="flex">
-              <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">Por Artículo 66</span>
+      @if($principal3)
+        <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
+          <a href="{{ get_permalink($principal3->ID) }}" class="block no-underline">
+            <div class="relative h-[200px] md:h-[250px] overflow-hidden mb-4">
+              <img src="{{ get_the_post_thumbnail_url($principal3->ID, 'medium') }}" 
+                   alt="{{ $principal3->post_title }}" 
+                   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
-            <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[21px] font-['Raleway'] no-underline hover:underline active:underline">La razón del cierre de Save the Children International en Nicaragua: "Hay insuficiencia de fondos"</h3>
-            <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">El gobierno de Daniel Ortega anunció el cierre de Save the Children International en Nicaragua, en una seguidilla de ceses masivos de ONG bajo el control de la...</p>
-          </div>
-        </a>
-      </article>
+            <div class="space-y-3">
+              <div class="flex">
+                <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                  Por {{ get_the_author_meta('display_name', $principal3->post_author) }}
+                </span>
+              </div>
+              <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[21px] font-['Raleway'] no-underline hover:underline active:underline">
+                {{ $principal3->post_title }}
+              </h3>
+              <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
+                {{ get_the_excerpt($principal3->ID) }}
+              </p>
+            </div>
+          </a>
+        </article>
+      @endif
+
+      @if($principal4)
+        <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
+          <a href="{{ get_permalink($principal4->ID) }}" class="block no-underline">
+            <div class="relative h-[200px] md:h-[250px] overflow-hidden mb-4">
+              <img src="{{ get_the_post_thumbnail_url($principal4->ID, 'medium') }}" 
+                   alt="{{ $principal4->post_title }}" 
+                   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="space-y-3">
+              <div class="flex">
+                <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                  Por {{ get_the_author_meta('display_name', $principal4->post_author) }}
+                </span>
+              </div>
+              <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[21px] font-['Raleway'] no-underline hover:underline active:underline">
+                {{ $principal4->post_title }}
+              </h3>
+              <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
+                {{ get_the_excerpt($principal4->ID) }}
+              </p>
+            </div>
+          </a>
+        </article>
+      @endif
     </div>
     
     {{-- Paginación del Slider --}}

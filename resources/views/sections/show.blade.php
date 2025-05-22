@@ -9,85 +9,92 @@
       </div>
       
       <div class="grid lg:grid-cols-2 gap-6">
-        {{-- Noticias Principales --}}
-        <article class="relative group">
-          <a href="#" class="block">
-            <div class="relative aspect-[348/245] w-full">
-              <img src="https://placehold.co/348x243" alt="Título de la noticia principal" 
-                   class="w-full h-full object-cover">
-              <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
-              <div class="absolute bottom-0 left-0 p-4 z-10">
-                <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">Título de la noticia principal de SHOW</h3>
-                <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">Por Artículo 66</span>
-              </div>
-            </div>
-          </a>
-        </article>
+        @php
+          $destacado1 = get_field('show_destacado_1', 'option');
+          $destacado2 = get_field('show_destacado_2', 'option');
+          $categoria_show = get_category_by_slug('show');
+          
+          if ($categoria_show && (!$destacado1 || !$destacado2)) {
+            $args = [
+              'post_type' => 'post',
+              'posts_per_page' => 2,
+              'cat' => $categoria_show->term_id,
+              'orderby' => 'date',
+              'order' => 'DESC'
+            ];
+            $recientes = new WP_Query($args);
+          }
+        @endphp
 
-        <article class="relative group">
-          <a href="#" class="block">
-            <div class="relative aspect-[348/245] w-full">
-              <img src="https://placehold.co/348x243" alt="Título de la noticia secundaria" 
-                   class="w-full h-full object-cover">
-              <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
-              <div class="absolute bottom-0 left-0 p-4 z-10">
-                <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">Título de la noticia secundaria de SHOW</h3>
-                <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">Por Artículo 66</span>
+        {{-- Noticias Principales --}}
+        @if($destacado1)
+          <article class="relative group">
+            <a href="{{ get_permalink($destacado1->ID) }}" class="block">
+              <div class="relative aspect-[348/245] w-full">
+                <img src="{{ get_the_post_thumbnail_url($destacado1->ID, 'large') }}" 
+                     alt="{{ $destacado1->post_title }}" 
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
+                <div class="absolute bottom-0 left-0 p-4 z-10">
+                  <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">
+                    {{ $destacado1->post_title }}
+                  </h3>
+                  <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">
+                    Por {{ get_the_author_meta('display_name', $destacado1->post_author) }}
+                  </span>
+                </div>
               </div>
-            </div>
-          </a>
-        </article>
+            </a>
+          </article>
+        @elseif(isset($recientes) && $recientes->have_posts())
+          @while($recientes->have_posts()) @php($recientes->the_post())
+            <article class="relative group">
+              <a href="{{ get_permalink() }}" class="block">
+                <div class="relative aspect-[348/245] w-full">
+                  <img src="{{ get_the_post_thumbnail_url(get_the_ID(), 'large') }}" 
+                       alt="{{ get_the_title() }}" 
+                       class="w-full h-full object-cover">
+                  <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
+                  <div class="absolute bottom-0 left-0 p-4 z-10">
+                    <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">
+                      {{ get_the_title() }}
+                    </h3>
+                    <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">
+                      Por {{ get_the_author_meta('display_name', get_the_author_meta('ID')) }}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          @endwhile
+          @php(wp_reset_postdata())
+        @endif
+
+        @if($destacado2)
+          <article class="relative group">
+            <a href="{{ get_permalink($destacado2->ID) }}" class="block">
+              <div class="relative aspect-[348/245] w-full">
+                <img src="{{ get_the_post_thumbnail_url($destacado2->ID, 'large') }}" 
+                     alt="{{ $destacado2->post_title }}" 
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
+                <div class="absolute bottom-0 left-0 p-4 z-10">
+                  <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[20px] tracking-[-0.38px] mb-2">
+                    {{ $destacado2->post_title }}
+                  </h3>
+                  <span class="text-white font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px]">
+                    Por {{ get_the_author_meta('display_name', $destacado2->post_author) }}
+                  </span>
+                </div>
+              </div>
+            </a>
+          </article>
+        @endif
 
         {{-- Noticias Secundarias --}}
-        <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
-          {{-- Noticia Secundaria 1 --}}
-          <article class="flex gap-4 items-start">
-            <div class="w-[105px] h-[80px] flex-shrink-0">
-              <img src="https://placehold.co/105x80" alt="Título de la noticia secundaria 1" 
-                   class="w-full h-full object-cover">
-            </div>
-            <div class="flex-grow">  
-              <h3 class="text-black font-['Raleway'] text-[14px] font-semibold leading-[21px] tracking-[-0.42px]">Título de la noticia secundaria 1 de SHOW</h3>
-              <span class="text-[#1D447A] font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px] block mb-1">Por Artículo 66</span>
-            </div>
-          </article>
-
-          {{-- Noticia Secundaria 2 --}}
-          <article class="flex gap-4 items-start">
-            <div class="w-[105px] h-[80px] flex-shrink-0">
-              <img src="https://placehold.co/105x80" alt="Título de la noticia secundaria 2" 
-                   class="w-full h-full object-cover">
-            </div>
-            <div class="flex-grow">
-              <h3 class="text-black font-['Raleway'] text-[14px] font-semibold leading-[21px] tracking-[-0.42px]">Título de la noticia secundaria 2 de SHOW</h3>
-              <span class="text-[#1D447A] font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px] block mb-1">Por Artículo 66</span>
-            </div>
-          </article>
-
-          {{-- Noticia Secundaria 3 --}}
-          <article class="flex gap-4 items-start">
-            <div class="w-[105px] h-[80px] flex-shrink-0">
-              <img src="https://placehold.co/105x80" alt="Título de la noticia secundaria 3" 
-                   class="w-full h-full object-cover">
-            </div>
-            <div class="flex-grow">
-              <h3 class="text-black font-['Raleway'] text-[14px] font-semibold leading-[21px] tracking-[-0.42px]">Título de la noticia secundaria 3 de SHOW</h3>
-              <span class="text-[#1D447A] font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px] block mb-1">Por Artículo 66</span>
-            </div>
-          </article>
-
-          {{-- Noticia Secundaria 4 --}}
-          <article class="flex gap-4 items-start">
-            <div class="w-[105px] h-[80px] flex-shrink-0">
-              <img src="https://placehold.co/105x80" alt="Título de la noticia secundaria 4" 
-                   class="w-full h-full object-cover">
-            </div>
-            <div class="flex-grow">
-              <h3 class="text-black font-['Raleway'] text-[14px] font-semibold leading-[21px] tracking-[-0.42px]">Título de la noticia secundaria 4 de SHOW</h3>
-              <span class="text-[#1D447A] font-['Roboto_Flex'] text-[12px] font-semibold leading-[26px] block mb-1">Por Artículo 66</span>
-            </div>
-          </article>
-        </div>
+        @if($categoria_show)
+          @include('sections.partials.show-secundarias')
+        @endif
       </div>
     </div>
 
@@ -95,7 +102,7 @@
     <div class="lg:col-span-1">
       <div class="space-y-6">
         {{-- Sección de Caricaturas --}}
-        @include('sections.caricatura')
+        @include('sections.partials.caricaturas')
         
         {{-- Espacio publicitario --}}
         <div class="bg-[#f8f9fa] p-4 rounded-lg text-center">

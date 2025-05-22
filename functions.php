@@ -49,7 +49,7 @@ Application::configure()
 |
 */
 
-collect(['setup', 'filters'])
+collect(['setup', 'filters', 'acf', 'widgets'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
@@ -67,6 +67,15 @@ add_action('widgets_init', function () {
         'name'          => __('Publicidad Sidebar', 'sage'),
         'id'            => 'sidebar-publicidad',
         'description'   => __('Widgets para publicidad en el sidebar', 'sage'),
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>'
+    ]);
+    register_sidebar([
+        'name'          => __('Sidebar Singles', 'sage'),
+        'id'            => 'sidebar-singles',
+        'description'   => __('Widgets para los artículos individuales (single)', 'sage'),
         'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h3>',

@@ -9,37 +9,58 @@
   </div>
 
   <div class="flex flex-wrap justify-between">
-    {{-- Artículo 1 --}}
-    <article class="relative w-[316px] h-[428px] mb-6 overflow-hidden">
-      <img src="https://placehold.co/800x450" alt="Estados Unidos" class="w-full h-full object-cover">
-      <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-b from-transparent to-black p-4">
-        <h3 class="inline text-white font-['Raleway'] text-[20px] font-[600] leading-[28px] tracking-[-0.4px] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
-          ¡ADVERTENCIA! ESTADOS UNIDOS PONDRÁ ESPECIAL ATENCIÓN A LA
-        </h3>
-        <p class="text-white font-['Roboto_Flex'] text-[12px] font-[600] leading-[26px] mt-2">Por Marling Balmaceda</p>
-      </div>
-    </article>
+    @php
+      $especial1 = get_field('especiales_1', 'option');
+      $especial2 = get_field('especiales_2', 'option');
+      $especial3 = get_field('especiales_3', 'option');
+    @endphp
 
-    {{-- Artículo 2 --}}
-    <article class="relative w-[316px] h-[428px] mb-6 overflow-hidden">
-      <img src="https://placehold.co/800x450" alt="Save the Children" class="w-full h-full object-cover">
-      <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-b from-transparent to-black p-4">
-        <h3 class="inline text-white font-['Raleway'] text-[20px] font-[600] leading-[28px] tracking-[-0.4px] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
-          LA RAZÓN DEL CIERRE DE SAVE THE CHILDREN INTERNATIONAL EN NICARAGUA.
-        </h3>
-        <p class="text-white font-['Roboto_Flex'] text-[12px] font-[600] leading-[26px] mt-2">Por Marling Balmaceda</p>
-      </div>
-    </article>
+    @if($especial1)
+      <article class="relative w-[316px] h-[428px] mb-6 overflow-hidden">
+        <img src="{{ get_the_post_thumbnail_url($especial1->ID, 'large') }}" 
+             alt="{{ $especial1->post_title }}" 
+             class="w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-b from-transparent to-black p-4">
+          <h3 class="inline text-white font-['Raleway'] text-[20px] font-[600] leading-[28px] tracking-[-0.4px] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
+            {{ $especial1->post_title }}
+          </h3>
+          <p class="text-white font-['Roboto_Flex'] text-[12px] font-[600] leading-[26px] mt-2">
+            Por {{ get_the_author_meta('display_name', $especial1->post_author) }}
+          </p>
+        </div>
+      </article>
+    @endif
 
-    {{-- Artículo 3 --}}
-    <article class="relative w-[316px] h-[428px] mb-6 overflow-hidden">
-      <img src="https://placehold.co/800x450" alt="José Mujica" class="w-full h-full object-cover">
-      <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-b from-transparent to-black p-4">
-        <h3 class="inline text-white font-['Raleway'] text-[20px] font-[600] leading-[28px] tracking-[-0.4px] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
-          JOSÉ «PEPE» MUJICA REVELA QUE CÁNCER SE EXTENDIÓ Y QUE ABANDONA.
-        </h3>
-        <p class="text-white font-['Roboto_Flex'] text-[12px] font-[600] leading-[26px] mt-2">Por Marling Balmaceda</p>
-      </div>
-    </article>
+    @if($especial2)
+      <article class="relative w-[316px] h-[428px] mb-6 overflow-hidden">
+        <img src="{{ get_the_post_thumbnail_url($especial2->ID, 'large') }}" 
+             alt="{{ $especial2->post_title }}" 
+             class="w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-b from-transparent to-black p-4">
+          <h3 class="inline text-white font-['Raleway'] text-[20px] font-[600] leading-[28px] tracking-[-0.4px] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
+            {{ $especial2->post_title }}
+          </h3>
+          <p class="text-white font-['Roboto_Flex'] text-[12px] font-[600] leading-[26px] mt-2">
+            Por {{ get_the_author_meta('display_name', $especial2->post_author) }}
+          </p>
+        </div>
+      </article>
+    @endif
+
+    @if($especial3)
+      <article class="relative w-[316px] h-[428px] mb-6 overflow-hidden">
+        <img src="{{ get_the_post_thumbnail_url($especial3->ID, 'large') }}" 
+             alt="{{ $especial3->post_title }}" 
+             class="w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-b from-transparent to-black p-4">
+          <h3 class="inline text-white font-['Raleway'] text-[20px] font-[600] leading-[28px] tracking-[-0.4px] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
+            {{ $especial3->post_title }}
+          </h3>
+          <p class="text-white font-['Roboto_Flex'] text-[12px] font-[600] leading-[26px] mt-2">
+            Por {{ get_the_author_meta('display_name', $especial3->post_author) }}
+          </p>
+        </div>
+      </article>
+    @endif
   </div>
 </section>

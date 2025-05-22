@@ -18,7 +18,7 @@ Crear un tema personalizado de WordPress basado en un diseño de Figma, utilizan
 - **Composer** (gestor de dependencias PHP)
 - **npm/yarn** (gestor de paquetes JS)
 - **LocalWP / DevKinsta** (entorno local)
-- **Cursor** (IDE basado en VS Code)
+-**ACF PRO (https://www.advancedcustomfields.com/resources/)**
 
 ---
 
@@ -64,6 +64,25 @@ npm run build          # compilación para producción
 - Compilar el tema localmente con `npm run build`
 - Subir sólo los archivos necesarios (evitar node_modules, etc)
 - Verificar que `composer install` funciona correctamente en el servidor
+
+---
+
+## 📁 Organización de archivos parciales
+- Usar el directorio `resources/views/sections/partials/` para componentes reutilizables.
+- Separar lógica compleja en archivos parciales para mejorar la mantenibilidad.
+- Ejemplo de estructura:
+  ```
+  resources/views/
+  ├── sections/
+  │   ├── nacionales.blade.php
+  │   └── partials/
+  │       └── nacionales-secundarias.blade.php
+  ```
+- Beneficios:
+  - Mejor organización del código
+  - Evita problemas de sintaxis en archivos grandes
+  - Facilita el mantenimiento y las actualizaciones
+  - Permite reutilizar componentes en diferentes secciones
 
 ---
 

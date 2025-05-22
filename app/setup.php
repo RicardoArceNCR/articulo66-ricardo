@@ -153,3 +153,47 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+/**
+ * Crear tabla de visitas al activar el tema
+ */
+function crear_tabla_visitas() {
+    global $wpdb;
+    $tabla_visitas = $wpdb->prefix . 'articulo66_visitas';
+    
+    $charset_collate = $wpdb->get_charset_collate();
+    
+    $sql = "CREATE TABLE IF NOT EXISTS $tabla_visitas (
+        id bigint(20) NOT NULL AUTO_INCREMENT,
+        post_id bigint(20) NOT NULL,
+        fecha date NOT NULL,
+        visitas int(11) NOT NULL DEFAULT 0,
+        PRIMARY KEY  (id),
+        UNIQUE KEY post_fecha (post_id, fecha)
+    ) $charset_collate;";
+    
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+}
+add_action('after_switch_theme', 'App\\crear_tabla_visitas');
+
+/**
+ * Registrar visita a un post
+ */
+function registrar_visita() {
+    if (is_single()) {
+        global $wpdb;
+        $tabla_visitas = $wpdb->prefix . 'articulo66_visitas';
+        $post_id = get_the_ID();
+        $fecha = current_time('Y-m-d');
+        
+        $wpdb->query($wpdb->prepare(
+            "INSERT INTO $tabla_visitas (post_id, fecha, visitas) 
+            VALUES (%d, %s, 1) 
+            ON DUPLICATE KEY UPDATE visitas = visitas + 1",
+            $post_id,
+            $fecha
+        ));
+    }
+}
+add_action('wp', 'App\\registrar_visita');

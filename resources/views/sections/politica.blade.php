@@ -28,43 +28,7 @@
   </div>
 
   <div class="swiper-politica">
-    <div class="swiper-wrapper">
-      {{-- Artículo 1 --}}
-      <article class="swiper-slide group">
-        <a href="#" class="block no-underline">
-          <div class="relative overflow-hidden">
-            <img src="https://placehold.co/400x300" alt="Título de la noticia 1" 
-                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-          </div>
-          <div class="mt-3">
-            <div class="mb-3">
-              <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">Por Artículo 66</span>
-            </div>
-            <h3 class="text-black font-['Raleway'] text-[15px] font-semibold leading-[21px] tracking-[-0.45px] hover:underline mb-2">Título de la noticia política 1</h3>
-            <p class="text-[#7F7F7F] text-[13px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3">Descripción corta de la noticia política...</p>
-          </div>
-        </a>
-      </article>
-
-      {{-- Artículos del 2 al 8 (igual que el primero pero cambiando números) --}}
-      @for ($i = 2; $i <= 8; $i++)
-        <article class="swiper-slide group">
-          <a href="#" class="block no-underline">
-            <div class="relative overflow-hidden">
-              <img src="https://placehold.co/400x300" alt="Título de la noticia {{ $i }}" 
-                   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="mt-3">
-              <div class="mb-3">
-                <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">Por Artículo 66</span>
-              </div>
-              <h3 class="text-black font-['Raleway'] text-[15px] font-semibold leading-[21px] tracking-[-0.45px] hover:underline mb-2">Título de la noticia política {{ $i }}</h3>
-              <p class="text-[#7F7F7F] text-[13px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3">Descripción corta de la noticia política...</p>
-            </div>
-          </a>
-        </article>
-      @endfor
-    </div>
+    @include('sections.partials.politica-slider')
     
     {{-- Paginación del Slider --}}
     <div class="swiper-pagination-politica mt-4 md:hidden"></div>
