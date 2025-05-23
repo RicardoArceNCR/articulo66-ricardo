@@ -82,3 +82,46 @@ add_action('widgets_init', function () {
         'after_title'   => '</h3>'
     ]);
 });
+
+
+// add support for youtube oembed
+require_once get_template_directory() . '/inc/acf/acf-field-multimedia.php';
+
+// add support for podcast oembed
+require_once get_template_directory() . '/inc/acf/acf-field-podcast.php';
+
+/*
+ * Enqueue scripts and styles.
+ */
+function theme_enqueue_video_assets() {
+    // ✅ Solo ejecutar si estamos en la portada
+    if (!is_front_page()) {
+        return;
+    }
+
+    // JS
+    wp_enqueue_script(
+        'video-loader',
+        get_template_directory_uri() . '/resources/js/video-loader.js',
+        [],
+        null,
+        true
+    );
+
+    wp_enqueue_script(
+        'podcast-loader',
+        get_template_directory_uri() . '/resources/js/podcast-loader.js',
+        [],
+        null,
+        true
+    );
+
+    // CSS
+    wp_enqueue_style(
+        'multimedia-loader-css',
+        get_template_directory_uri() . '/resources/css/multimedia-loader.css',
+        [],
+        null
+    );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_video_assets');
