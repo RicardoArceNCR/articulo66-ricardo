@@ -35,6 +35,12 @@ function get_the_youtube_id($post_id = null) {
 function get_the_youtube_iframe($post_id = null, $args = []) {
     $post_id = $post_id ?: get_the_ID();
     $video_id = get_the_youtube_id($post_id);
+	$field_youtube = get_field('youtube_embed', $post_id) ?: null;
+
+	// ✅ Si contiene un iframe embebido directamente, lo devolvemos tal cual
+    if (stripos($field_youtube, '<iframe') !== false) {
+        return $field_youtube;
+    }
 
     if (!$video_id) {
         return null;
@@ -80,7 +86,7 @@ add_action( 'acf/include_fields', function() {
 			'label' => 'YouTube',
 			'name' => 'youtube_embed',
 			'aria-label' => '',
-			'type' => 'url',
+			'type' => 'textarea',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
@@ -90,8 +96,11 @@ add_action( 'acf/include_fields', function() {
 				'id' => '',
 			),
 			'default_value' => '',
+			'maxlength' => '',
 			'allow_in_bindings' => 1,
+			'rows' => 3,
 			'placeholder' => '',
+			'new_lines' => '',
 		),
 	),
 	'location' => array(

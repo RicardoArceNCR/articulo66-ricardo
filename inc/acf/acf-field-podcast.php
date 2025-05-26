@@ -8,19 +8,28 @@ function get_the_podcast($post_id = null) {
 
 function get_the_podcast_iframe($post_id = null, $args = []) {
     $post_id = $post_id ?: get_the_ID();
-    $url = get_the_podcast($post_id);
+    $value = get_field('podcast_embed', $post_id);
 
-    if (!$url || !filter_var($url, FILTER_VALIDATE_URL)) {
+    if (!$value) {
         return null;
     }
 
-    $parsed = parse_url($url);
-    $host = $parsed['host'] ?? '';
+    // ✅ Si contiene un iframe embebido directamente, lo devolvemos tal cual
+    if (stripos($value, '<iframe') !== false) {
+        return $value;
+    }
 
-    // Atributos comunes
+    // ✅ Si es una URL, tratamos de embeberla
+    if (!filter_var($value, FILTER_VALIDATE_URL)) {
+        return null;
+    }
+
+    $parsed = parse_url($value);
+    $host = strtolower($parsed['host'] ?? '');
+
     $defaults = [
         'width' => '100%',
-        'height' => 352,
+        'height' => '100%',
         'class' => '',
         'style' => 'border-radius:12px',
         'frameborder' => 0,
@@ -45,7 +54,7 @@ function get_the_podcast_iframe($post_id = null, $args = []) {
 
     // --- Spotify ---
     if (strpos($host, 'spotify.com') !== false) {
-        if (preg_match('/episode\/([a-zA-Z0-9]+)/', $url, $matches)) {
+        if (preg_match('/episode\/([a-zA-Z0-9]+)/', $value, $matches)) {
             $episode_id = $matches[1];
             $embed_url = "https://open.spotify.com/embed/episode/{$episode_id}?utm_source=generator";
             return "<iframe src=\"{$embed_url}\" {$attr_string}></iframe>";
@@ -54,7 +63,6 @@ function get_the_podcast_iframe($post_id = null, $args = []) {
 
     // --- Apple Podcasts ---
     if (strpos($host, 'podcasts.apple.com') !== false) {
-        // Apple Podcasts generalmente se embebe con iframe del sitio oficial
         $embed_url = "https://embed.podcasts.apple.com" . $parsed['path'];
         if (!empty($parsed['query'])) {
             $embed_url .= '?' . $parsed['query'];
@@ -64,16 +72,25 @@ function get_the_podcast_iframe($post_id = null, $args = []) {
 
     // --- iVoox ---
     if (strpos($host, 'ivoox.com') !== false) {
-        // Intentar construir embed manual (restringido, pero funciona con ID)
-        if (preg_match('/\/([0-9]+)_([a-zA-Z0-9_-]+)\.html/', $url, $matches)) {
+        if (preg_match('/\/([0-9]+)_([a-zA-Z0-9_-]+)\.html/', $value, $matches)) {
             $id = $matches[1];
             $embed_url = "https://www.ivoox.com/player_ej_{$id}_1.html";
             return "<iframe src=\"{$embed_url}\" {$attr_string}></iframe>";
         }
     }
 
-    // ❌ No compatible
-    return null;
+    // --- YouTube (por si lo usan como podcast) ---
+    if (strpos($host, 'youtube.com') !== false || strpos($host, 'youtu.be') !== false) {
+        preg_match('/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $value, $matches);
+        $video_id = $matches[1] ?? null;
+        if ($video_id) {
+            $embed_url = "https://www.youtube.com/embed/{$video_id}";
+            return "<iframe src=\"{$embed_url}\" {$attr_string}></iframe>";
+        }
+    }
+
+    // ❌ Fallback para enlaces no compatibles
+    return '<p>Este podcast no se puede mostrar automáticamente. <a href="' . esc_url($value) . '" target="_blank">Escúchalo aquí</a>.</p>';
 }
 
 
@@ -88,10 +105,10 @@ add_action( 'acf/include_fields', function() {
 	'fields' => array(
 		array(
 			'key' => 'field_6830c71321794',
-			'label' => 'Podcast',
+			'label' => 'Podcas',
 			'name' => 'podcast_embed',
 			'aria-label' => '',
-			'type' => 'url',
+			'type' => 'textarea',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
@@ -101,8 +118,11 @@ add_action( 'acf/include_fields', function() {
 				'id' => '',
 			),
 			'default_value' => '',
+			'maxlength' => '',
 			'allow_in_bindings' => 1,
+			'rows' => 3,
 			'placeholder' => '',
+			'new_lines' => '',
 		),
 	),
 	'location' => array(
@@ -125,6 +145,8 @@ add_action( 'acf/include_fields', function() {
 	'show_in_rest' => 0,
 ) );
 } );
+
+
 
 
 
