@@ -23,13 +23,13 @@
                   $categoria = get_the_category($principal->ID);
                   $categoria_nombre = !empty($categoria) ? $categoria[0]->name : '';
                 @endphp
-                <span class="inline-block px-3 py-1 mb-4 text-white text-center text-xs font-extrabold leading-[30.201px] tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
+                <span class="inline-block px-3 py-1 mb-4 text-white text-center text-[0.95rem] font-extrabold leading-[30.201px] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h2 class="text-white text-2xl md:text-[55.591px] font-medium leading-[53.297px] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h2 class="text-white text-2xl md:text-[2.87rem] font-medium leading-[53.297px] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $principal->post_title }}
                 </h2>
-                <p class="text-white text-xs font-semibold leading-[30.201px] font-['Roboto Flex']">
+                <p class="text-white text-base font-medium leading-[30.201px] font-['Roboto Flex']">
                   Por {{ get_the_author_meta('display_name', $principal->post_author) }}
                 </p>
               </div>
@@ -55,13 +55,13 @@
                   $categoria = get_the_category($secundario1->ID);
                   $categoria_nombre = !empty($categoria) ? $categoria[0]->name : '';
                 @endphp
-                <span class="inline-block px-3 py-1 mb-2 text-white text-center text-xs font-extrabold leading-[30.201px] tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
+                <span class="inline-block px-3 py-1 mb-2 text-white text-center text-[0.95rem] font-extrabold leading-[30.201px] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h3 class="text-white text-[18px] font-medium leading-[25.3px] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h3 class="text-white text-[1.34rem] font-medium leading-[1.6rem] tracking-[0.01rem] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $secundario1->post_title }}
                 </h3>
-                <p class="text-white text-xs font-semibold leading-[30.201px] font-['Roboto Flex']">
+                <p class="text-white text-[0.9rem] font-normal leading-[1.3rem] font-['Roboto Flex']">
                   Por {{ get_the_author_meta('display_name', $secundario1->post_author) }}
                 </p>
               </div>
@@ -84,7 +84,7 @@
                   $categoria = get_the_category($secundario2->ID);
                   $categoria_nombre = !empty($categoria) ? $categoria[0]->name : '';
                 @endphp
-                <span class="inline-block px-3 py-1 mb-2 text-white text-center text-xs font-extrabold leading-[30.201px] tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
+                <span class="inline-block px-3 py-1 mb-2 text-white text-center text-[0.95rem] font-extrabold leading-[30.201px] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
                 <h3 class="text-white text-[18px] font-medium leading-[25.3px] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">

@@ -107,3 +107,14 @@ nav ul li a:active {
   animation: marquee 30s linear infinite;
   white-space: nowrap;
 }
+
+
+@media (min-width: 80rem){
+  .main-menu.container{ 
+    max-width: 85rem;
+  }
+}
+
+.letter-spacing-custom {
+  letter-spacing: 0.054rem !important;
+}

@@ -116,14 +116,15 @@
   </div>
 
   {{-- Menú Principal --}}
-  <div class="container mx-auto px-4">
+  <div class="main-menu container mx-auto px-4">
+    {{-- Menú móvil --}}
     <nav class="hidden lg:block py-4">
       @if (has_nav_menu('primary_navigation'))
         <ul class="flex items-center justify-center space-x-6">
           @foreach(wp_get_nav_menu_items(get_nav_menu_locations()['primary_navigation']) as $item)
             <li>
               <a href="{{ $item->url }}" 
-                 class="text-[#1D447A] text-right font-['Raleway'] text-[15.31px] font-extrabold leading-[6.635px] tracking-[0.153px] uppercase">
+                 class="text-[#1D447A] text-right font-['Raleway'] text-[15.31px] font-extrabold leading-[6.635px] tracking-[0.054rem] uppercase">
                 {{ $item->title }}
               </a>
             </li>
@@ -160,7 +161,7 @@
 <div class="w-full bg-[#E7E7E7] overflow-hidden relative">
   <div class="flex items-center">
     {{-- Etiqueta ÚLTIMAS NOTICIAS --}}
-    <div class="bg-[#F5A623] px-4 py-2 flex items-center font-['Raleway'] text-[14px] leading-[26px] text-white uppercase z-10">
+    <div class="bg-[#F5A623] px-4 py-2 flex items-center font-['Raleway'] leading-[26px] text-white uppercase z-10">
       {{-- Versión Desktop --}}
       <div class="hidden md:flex items-center">
         <span class="font-extrabold">ÚLTIMAS</span>
@@ -193,7 +194,7 @@
       @endphp
       <div class="ticker-content inline-block relative">
         @while($ultimas_noticias->have_posts()) @php($ultimas_noticias->the_post())
-          <a href="{{ get_permalink() }}" class="mx-4 text-[#929292] font-['Raleway'] text-[12px] md:text-xs font-semibold leading-[26px] tracking-[0.48px] uppercase hover:text-[#1D447A]">
+          <a href="{{ get_permalink() }}" class="mx-4 text-[#929292] font-['Raleway'] text-[12px] md:text-xs font-semibold leading-[26px] tracking-[0.060em] uppercase hover:text-[#1D447A]">
             {{ get_the_title() }}
           </a>
           @if(!$ultimas_noticias->current_post == $ultimas_noticias->post_count - 1)
@@ -233,7 +234,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const baseSpeed = 30;
   
   // Calcular la duración basada en el ancho del contenido
-  const duration = (contentWidth / baseSpeed) * 1000;
+  //const duration = (contentWidth / baseSpeed) * 1000;
+  const duration = 212600;
   
   // Aplicar la animación
   tickerContent.style.animation = `marquee ${duration}ms linear infinite`;
