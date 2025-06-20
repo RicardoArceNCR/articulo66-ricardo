@@ -21,10 +21,10 @@
              alt="{{ $especial1->post_title }}" 
              class="w-full h-full object-cover">
         <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-b from-transparent to-black p-4">
-          <h3 class="inline text-white font-['Raleway'] text-[20px] font-[600] leading-[28px] tracking-[-0.4px] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
+          <h3 class="inline text-white font-['Raleway'] text-[1.16rem] font-[600] leading-[1rem] tracking-[0.001rem] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
             {{ $especial1->post_title }}
           </h3>
-          <p class="text-white font-['Roboto_Flex'] text-[12px] font-[600] leading-[26px] mt-2">
+          <p class="text-white font-['Roboto_Flex'] text-[0.9rem] font-[600] leading-[26px] mt-2">
             Por {{ get_the_author_meta('display_name', $especial1->post_author) }}
           </p>
         </div>
@@ -37,10 +37,10 @@
              alt="{{ $especial2->post_title }}" 
              class="w-full h-full object-cover">
         <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-b from-transparent to-black p-4">
-          <h3 class="inline text-white font-['Raleway'] text-[20px] font-[600] leading-[28px] tracking-[-0.4px] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
+          <h3 class="inline text-white font-['Raleway'] text-[1.16rem] font-[600] leading-[1rem] tracking-[0.001rem] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
             {{ $especial2->post_title }}
           </h3>
-          <p class="text-white font-['Roboto_Flex'] text-[12px] font-[600] leading-[26px] mt-2">
+          <p class="text-white font-['Roboto_Flex'] text-[0.9rem] font-[600] leading-[26px] mt-2">
             Por {{ get_the_author_meta('display_name', $especial2->post_author) }}
           </p>
         </div>
@@ -53,10 +53,10 @@
              alt="{{ $especial3->post_title }}" 
              class="w-full h-full object-cover">
         <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-b from-transparent to-black p-4">
-          <h3 class="inline text-white font-['Raleway'] text-[20px] font-[600] leading-[28px] tracking-[-0.4px] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
+          <h3 class="inline text-white font-['Raleway'] text-[1.16rem] font-[600] leading-[1rem] tracking-[0.001rem] uppercase [box-decoration-break:clone] [-webkit-box-decoration-break:clone] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] px-2 py-1">
             {{ $especial3->post_title }}
           </h3>
-          <p class="text-white font-['Roboto_Flex'] text-[12px] font-[600] leading-[26px] mt-2">
+          <p class="text-white font-['Roboto_Flex'] text-[0.9rem] font-[600] leading-[26px] mt-2">
             Por {{ get_the_author_meta('display_name', $especial3->post_author) }}
           </p>
         </div>

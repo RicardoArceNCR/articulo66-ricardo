@@ -110,7 +110,7 @@ nav ul li a:active {
 
 
 @media (min-width: 80rem){
-  .main-menu.container{ 
+  .container{ 
     max-width: 85rem;
   }
 }
