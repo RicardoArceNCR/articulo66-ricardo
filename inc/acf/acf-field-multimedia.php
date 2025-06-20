@@ -15,16 +15,49 @@ function get_the_youtube($post_id = null) {
  */
 function get_the_youtube_id($post_id = null) {
     $post_id = $post_id ?: get_the_ID();
-    $url = get_field('youtube_embed', $post_id);
+    $input = get_field('youtube_embed', $post_id);
 
-    if (!$url || !filter_var($url, FILTER_VALIDATE_URL)) {
+    if (!$input) {
         return null;
     }
 
-    // Compatible con watch?v=, youtu.be, shorts
-    preg_match('/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $url, $matches);
+    // Si es un iframe, extraer el src
+    if (stripos($input, '<iframe') !== false) {
+        if (preg_match('/src="([^"]+)"/', $input, $srcMatch)) {
+            $input = $srcMatch[1];
+        }
+    }
 
-    return $matches[1] ?? null;
+    // Buscar el ID en la URL o src
+    if (preg_match('/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $input, $matches)) {
+        return $matches[1];
+    }
+
+    // Si el input es solo el ID (11 caracteres)
+    if (preg_match('/^[a-zA-Z0-9_-]{11}$/', trim($input))) {
+        return trim($input);
+    }
+
+    return null;
+}
+
+/**
+ * Summary of get_the_youtube_thumbnail
+ * @param mixed $post_id
+ * @param string|null $resolution
+ * @return string|null
+ */
+function get_the_youtube_thumbnail($post_id = null, $resolution = 'hqdefault') {
+	$post_id = $post_id ?: get_the_ID();
+	$video_id = get_the_youtube_id($post_id);
+
+	if (!$video_id) {
+		return null;
+	}
+
+	// URL del thumbnail de YouTube
+	return sprintf('https://img.youtube.com/vi/%s/%s.jpg', $video_id, $resolution);
+
 }
 
 /**
