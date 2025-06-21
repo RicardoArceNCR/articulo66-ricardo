@@ -161,7 +161,7 @@
 <div class="w-full bg-[#E7E7E7] overflow-hidden relative">
   <div class="flex items-center">
     {{-- Etiqueta ÚLTIMAS NOTICIAS --}}
-    <div class="bg-[#F5A623] px-4 py-2 flex items-center font-['Raleway'] leading-[26px] text-white uppercase z-10">
+    <div class="bg-[#F5A623] px-2 md:px-4 py-2  flex items-center font-['Raleway'] leading-[26px] text-white uppercase z-10">
       {{-- Versión Desktop --}}
       <div class="hidden md:flex items-center">
         <span class="font-extrabold">ÚLTIMAS</span>

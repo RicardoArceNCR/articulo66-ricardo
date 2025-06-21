@@ -1,6 +1,6 @@
 {{-- Sección de Artículos Destacados --}}
-<section class="container mx-auto px-4 py-8">
-  <div class="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-0">
+<section class="container mx-auto p-2 md:px-4 md:py-8">
+  <div class="grid grid-cols-1 gap-2 lg:grid-cols-12 lg:gap-0">
     {{-- Artículo Principal --}}
     @php
       $principal = get_field('articulo_principal', 'option');
