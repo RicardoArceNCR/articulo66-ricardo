@@ -28,7 +28,7 @@
                 Por {{ get_the_author_meta('display_name', get_the_author_meta('ID')) }}
               </span>
             </div>
-            <h3 class="text-[#666666] font-['Raleway'] text-[1.14rem] font-semibold leading-[1.6rem] tracking-[0.001rem] hover:underline mb-2">
+            <h3 class="text-[#666666] font-['Raleway'] text-[1.14rem] font-semibold leading-[1.3rem] tracking-[0.001rem] hover:underline mb-2">
               {{ get_the_title() }}
             </h3>
             <p class="text-[#7F7F7F] text-[13px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3">
