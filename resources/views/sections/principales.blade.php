@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0rem;
   }
 }
 
