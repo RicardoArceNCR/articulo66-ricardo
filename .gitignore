@@ -7,7 +7,8 @@ yarn.lock
 
 # Build files
 dist/
-public/
+public/build/
+wp-content/uploads/
 
 # Environment
 .env
