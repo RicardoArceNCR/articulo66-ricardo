@@ -7,7 +7,7 @@
         <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600]">PORTADA</a></li>
         <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600]">NACIONALES</a></li>
         <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600] underline">FINANZAS</a></li>
-        <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600]">INTERNACIONALES</a></li>
+        <li><a href="#" class="text-white hover:text-[#ffffff] transition-colors font-['Raleway'] font-[800]">INTERNACIONALES</a></li>
         <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600]">OPINIÓN</a></li>
         <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600]">CARICATURA</a></li>
         <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600]">SHOW</a></li>
