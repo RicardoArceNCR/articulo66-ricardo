@@ -1,5 +1,12 @@
 {{-- Sección de Artículos Destacados --}}
-<section class="container mx-auto p-2 md:max-w-[90%] md:py-8">
+<section class="
+    mx-auto px-2 py-8
+    max-w-[99%]
+    sm:max-w-[98%]
+    md:max-w-[96%]
+    lg:max-w-[94%]
+    xl:max-w-[84%]
+  ">
   <div class="grid grid-cols-1 gap-2 lg:grid-cols-12 lg:gap-0">
     {{-- Artículo Principal --}}
     @php
@@ -29,7 +36,7 @@
                   $categoria = get_the_category($principal->ID);
                   $categoria_nombre = !empty($categoria) ? $categoria[0]->name : '';
                 @endphp
-                <span class="inline-block px-1 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
+                <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
                 <h2 class="text-white text-2xl md:text-[2.45rem] font-medium leading-[2.8rem] font-['Raleway'] mb-2 no-underline hover:underline">
@@ -66,10 +73,10 @@
                   $categoria = get_the_category($secundario1->ID);
                   $categoria_nombre = !empty($categoria) ? $categoria[0]->name : '';
                 @endphp
-                <span class="inline-block px-1 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
+                <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h3 class="text-white text-[1.1rem] font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h3 class="text-white text-[1.2rem] font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $secundario1->post_title }}
                 </h3>
                 <p class="text-white text-[0.9rem] font-normal leading-[1.3rem] font-['Roboto Flex']">
@@ -99,10 +106,10 @@
                   $categoria = get_the_category($secundario2->ID);
                   $categoria_nombre = !empty($categoria) ? $categoria[0]->name : '';
                 @endphp
-                <span class="inline-block px-1 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
+                <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h3 class="text-white text-[1.1rem] font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h3 class="text-white text-[1.2rem] font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $secundario2->post_title }}
                 </h3>
                 <p class="text-white text-[0.9rem] font-normal leading-[1.3rem] font-['Roboto Flex']">
