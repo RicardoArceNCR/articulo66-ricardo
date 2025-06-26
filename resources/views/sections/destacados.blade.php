@@ -1,5 +1,5 @@
 {{-- Sección de Artículos Destacados --}}
-<section class="container mx-auto p-2 md:px-4 md:py-8">
+<section class="container mx-auto p-2 md:max-w-[90%] md:py-8">
   <div class="grid grid-cols-1 gap-2 lg:grid-cols-12 lg:gap-0">
     {{-- Artículo Principal --}}
     @php
