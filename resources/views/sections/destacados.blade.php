@@ -39,7 +39,7 @@
                 <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h2 class="text-white text-2xl md:text-[2.45rem] font-medium leading-[2.8rem] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h2 class="text-[1.35rem] sm:text-[1.875rem] md:text-[2.45rem] lg:text-[2.5rem] text-white font-medium leading-[1.4rem] sm:leading-[2rem] md:leading-[2.8rem] lg:leading-[3rem] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $principal->post_title }}
                 </h2>
                 <p class="text-white text-base font-medium leading-[30.201px] font-['Roboto Flex']">
