@@ -1,3 +1,18 @@
+/* ————————————————————————————— */
+/* 1) Variables globales para tus design tokens */
+:root {
+  --color-grey-1:  #F4F9FC;
+  --color-grey-2:  #E7E7E7;
+  --color-dark-100:#5D5D5D;
+  --color-dark-50: #333333;
+  --color-blue:    #1D447A;
+  --color-green-100:#0A95A6;
+  --color-green-50:#1BC6EB;
+  --color-base:    #ffffff;    /* si quieres usar un “blanco genérico” */
+}
+
+/* ————————————————————————————— */
+/* IMPORTS EXISTENTES (no los toques) */
 @import "tailwindcss" theme(static);
 @source "../views/";
 @source "../../app/";
@@ -5,10 +20,13 @@
 @import 'swiper/css';
 @import 'swiper/css/pagination';
 
+/* Tailwind core */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ————————————————————————————— */
+/* CAPA BASE (sigue igual) */
 @layer base {
   html {
     font-family: 'Raleway', sans-serif;
@@ -49,6 +67,8 @@ nav ul li a:active {
   transition: text-decoration 0.2s ease-in-out;
 }
 
+/* ————————————————————————————— */
+/* CAPA COMPONENTS (sigue igual) */
 @layer components {
   .menu-link {
     @apply no-underline;
@@ -61,7 +81,7 @@ nav ul li a:active {
   }
 }
 
-/* Estilos para el botón ESPECIALES */
+/* Botón ESPECIALES */
 .btn-especiales {
   border-radius: 0 12px;
   border: 1.5px solid #09B2F5;
@@ -108,7 +128,6 @@ nav ul li a:active {
   white-space: nowrap;
 }
 
-
 @media (min-width: 80rem){
   .container{ 
     max-width: 77rem;
@@ -117,4 +136,17 @@ nav ul li a:active {
 
 .letter-spacing-custom {
   letter-spacing: 0.054rem !important;
+}
+
+/* ————————————————————————————— */
+/* 2) Capa UTILITIES: genera automáticamente las clases bg-*, usando tus variables */
+@layer utilities {
+  .bg-grey-1     { background-color: var(--color-grey-1); }
+  .bg-grey-2     { background-color: var(--color-grey-2); }
+  .bg-dark-100   { background-color: var(--color-dark-100); }
+  .bg-dark-50    { background-color: var(--color-dark-50); }
+  .bg-blue       { background-color: var(--color-blue); }
+  .bg-green-100  { background-color: var(--color-green-100); }
+  .bg-green-50   { background-color: var(--color-green-50); }
+  .bg-base       { background-color: var(--color-base); }
 }

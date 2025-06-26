@@ -8,7 +8,7 @@
 </div>
 
 {{-- Barra superior con fecha y redes sociales --}}
-<div class="bg-[#E7E7E7] h-[38.847px] flex items-center">
+<div class="bg-blue h-[38.847px] flex items-center">
   <div class="px-2 w-full">
     <div class="flex justify-between items-center">
       <div class="flex items-center space-x-4">
@@ -18,14 +18,14 @@
                 @click="sidebarOpen = !sidebarOpen">
           <span class="sr-only">Menú principal</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="17" viewBox="0 0 26 17" fill="none">
-            <rect width="26" height="3" fill="#5D5D5D"/>
-            <rect y="7" width="26" height="3" fill="#5D5D5D"/>
-            <rect y="14" width="26" height="3" fill="#5D5D5D"/>
+            <rect width="26" height="3" fill="#ffffff"/>
+            <rect y="7" width="26" height="3" fill="#ffffff"/>
+            <rect y="14" width="26" height="3" fill="#ffffff"/>
           </svg>
         </button>
 
         {{-- Fecha --}}
-        <div class="text-[#777] text-xs font-medium leading-[23.247px] font-['Raleway']">
+        <div class="text-white text-xs font-medium leading-[23.247px] font-['Raleway']">
           <span class="hidden md:inline">
             {{ \Carbon\Carbon::now()->locale('es')->isoFormat('dddd D [de] MMMM [del] YYYY') }}
           </span>
@@ -38,7 +38,7 @@
       {{-- Redes Sociales --}}
       <div class="flex items-center space-x-3">
         {{-- Link a Contáctenos --}}
-        <a href="/contactenos" class="hidden md:block text-[#262626] text-right text-sm font-bold leading-[26px]">Contáctenos</a>
+        <a href="/contactenos" class="hidden md:block text-[#ffffff] text-right text-sm font-bold leading-[26px]">Contáctenos</a>
         
         {{-- Separador vertical --}}
         <div class="hidden md:block w-[1px] h-[27px] bg-[#AFB2B8]"></div>
@@ -194,7 +194,7 @@
       @endphp
       <div class="ticker-content inline-block relative">
         @while($ultimas_noticias->have_posts()) @php($ultimas_noticias->the_post())
-          <a href="{{ get_permalink() }}" class="mx-4 text-[#929292] font-['Raleway'] text-[12px] md:text-xs font-semibold leading-[26px] tracking-[0.060em] uppercase hover:text-[#1D447A]">
+          <a href="{{ get_permalink() }}" class="mx-4 text-[#929292] font-['Raleway'] text-[12px] md:text-xs font-semibold leading-[26px] tracking-[0.045em] uppercase hover:text-[#1D447A]">
             {{ get_the_title() }}
           </a>
           @if(!$ultimas_noticias->current_post == $ultimas_noticias->post_count - 1)
