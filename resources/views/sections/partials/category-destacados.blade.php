@@ -32,7 +32,12 @@
                  alt="{{ $principal->post_title }}"
                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
           </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+          <div class="absolute bottom-0 left-0 right-0 h-1/2
+              bg-gradient-to-t
+              from-[rgba(0,0,0,0.98)]
+              via-[rgba(0,0,0,0.8)]
+              to-[rgba(0,0,0,0)]
+            ">
             <div class="absolute bottom-0 p-6">
               @php
                 $categoria = get_the_category($principal->ID);
@@ -44,7 +49,7 @@
               <h2 class="text-white text-2xl md:text-[55.591px] font-medium leading-[53.297px] font-['Raleway'] mb-2 no-underline hover:underline">
                 {{ $principal->post_title }}
               </h2>
-              <p class="text-white text-xs font-semibold leading-[30.201px] font-['Roboto Flex']">
+              <p class="text-white text-[0.9rem] font-normal leading-[1.3rem] font-['Roboto Flex']">
                 Por {{ get_the_author_meta('display_name', $principal->post_author) }}
               </p>
             </div>
@@ -75,7 +80,7 @@
                 <h3 class="text-white text-[18px] font-medium leading-[25.3px] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $secundario->post_title }}
                 </h3>
-                <p class="text-white text-xs font-semibold leading-[30.201px] font-['Roboto Flex']">
+                <p class="text-white text-[0.9rem] font-normal leading-[1.3rem] font-['Roboto Flex']">
                   Por {{ get_the_author_meta('display_name', $secundario->post_author) }}
                 </p>
               </div>
