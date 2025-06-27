@@ -31,7 +31,7 @@
               via-[rgba(0,0,0,0.8)]
               to-[rgba(0,0,0,0)]
             ">
-              <div class="absolute bottom-0 pt-0 pl-5 pr-4 pb-2">
+              <div class="absolute bottom-0 px-[0.7rem] lg:px-[0.1rem] sm:px-[1rem] md:px-[1.5rem] lg:px-[1.4rem] py-[0.9rem] lg:py-[0.2rem]">
                 @php
                   $categoria = get_the_category($principal->ID);
                   $categoria_nombre = !empty($categoria) ? $categoria[0]->name : '';
@@ -39,10 +39,10 @@
                 <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h2 class="text-[1.35rem] sm:text-[1.875rem] md:text-[2.45rem] lg:text-[2.5rem] text-white font-medium leading-[1.4rem] sm:leading-[2rem] md:leading-[2.8rem] lg:leading-[3rem] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h2 class="text-[1.35rem] sm:text-[1.875rem] md:text-[2.45rem] lg:text-[2.5rem] text-white font-medium leading-[1.5rem] sm:leading-[2rem] md:leading-[2.8rem] lg:leading-[3rem] font-['Raleway'] mb-[0.29rem] lg:mb-[0.5rem] no-underline hover:underline">
                   {{ $principal->post_title }}
                 </h2>
-                <p class="text-white text-base font-medium leading-[30.201px] font-['Roboto Flex']">
+                <p class="text-white text-base font-medium leading-[1.4rem] mb-[0.1rem] lg:mb-[1rem] font-['Roboto Flex']">
                   Por {{ get_the_author_meta('display_name', $principal->post_author) }}
                 </p>
               </div>
