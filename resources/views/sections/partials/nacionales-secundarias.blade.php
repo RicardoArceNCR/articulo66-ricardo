@@ -22,7 +22,7 @@
                class="w-full h-full object-cover">
         </div>
         <div class="flex-grow">  
-          <h3 class="text-[#404040] font-['Raleway'] text-base font-semibold leading-[21px] tracking-[0.009rem]">
+          <h3 class="text-black text-[0.97rem] md:text-[0.97rem] font-medium leading-[1.33rem] font-['Raleway'] no-underline hover:underline active:underline">
             {{ get_the_title() }}
           </h3>
           <span class="text-[#1D447A] font-['Roboto_Flex'] text-[0.9rem] font-semibold leading-[26px] block mb-1">
