@@ -1,6 +1,6 @@
 {{-- Sección de Noticias Principales --}}
-<section class="container mx-auto px-4 py-8 overflow-hidden">
-  <div class="swiper-principales md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-4">
+<section class="container mx-auto px-0 pt-6 pb-4 overflow-hidden">
+  <div class="swiper-principales md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4">
     <div class="swiper-wrapper md:!contents">
       @php
         $principal1 = get_field('principal_1', 'option');
@@ -17,13 +17,13 @@
                    alt="{{ $principal1->post_title }}" 
                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
-            <div class="space-y-3">
+            <div class="space-y-2">
               <div class="flex">
                 <span class="inline-block w-fit px-4 py-2 text-white text-[0.8rem] font-bold leading-none tracking-[0.060rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal1->post_author) }}
                 </span>
               </div>
-              <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[1.44rem] font-['Raleway'] no-underline hover:underline active:underline">
+              <h3 class="text-black text-[1.1rem] md:text-[1.19rem] font-medium leading-[1.55rem] font-['Raleway'] no-underline hover:underline active:underline">
                 {{ $principal1->post_title }}
               </h3>
               <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
@@ -42,13 +42,13 @@
                    alt="{{ $principal2->post_title }}" 
                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
-            <div class="space-y-3">
+            <div class="space-y-2">
               <div class="flex">
                 <span class="inline-block w-fit px-4 py-2 text-white text-[0.8rem] font-bold leading-none tracking-[0.060rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal2->post_author) }}
                 </span>
               </div>
-              <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[1.44rem] font-['Raleway'] no-underline hover:underline active:underline">
+              <h3 class="text-black text-[1.1rem] md:text-[1.19rem] font-medium leading-[1.55rem] font-['Raleway'] no-underline hover:underline active:underline">
                 {{ $principal2->post_title }}
               </h3>
               <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
@@ -67,13 +67,13 @@
                    alt="{{ $principal3->post_title }}" 
                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
-            <div class="space-y-3">
+            <div class="space-y-2">
               <div class="flex">
                 <span class="inline-block w-fit px-4 py-2 text-white text-[0.8rem] font-bold leading-none tracking-[0.060rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal3->post_author) }}
                 </span>
               </div>
-              <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[1.44rem] font-['Raleway'] no-underline hover:underline active:underline">
+              <h3 class="text-black text-[1.1rem] md:text-[1.19rem] font-medium leading-[1.55rem] font-['Raleway'] no-underline hover:underline active:underline">
                 {{ $principal3->post_title }}
               </h3>
               <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
@@ -92,13 +92,13 @@
                    alt="{{ $principal4->post_title }}" 
                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
-            <div class="space-y-3">
+            <div class="space-y-2">
               <div class="flex">
                 <span class="inline-block w-fit px-4 py-2 text-white text-[0.8rem] font-bold leading-none tracking-[0.060rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal4->post_author) }}
                 </span>
               </div>
-              <h3 class="text-black text-[15px] md:text-[17px] font-medium leading-[1.44rem] font-['Raleway'] no-underline hover:underline active:underline">
+              <h3 class="text-black text-[1.1rem] md:text-[1.2rem] font-medium leading-[1.55rem] font-['Raleway'] no-underline hover:underline active:underline">
                 {{ $principal4->post_title }}
               </h3>
               <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
