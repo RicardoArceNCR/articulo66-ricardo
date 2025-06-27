@@ -68,7 +68,7 @@
               via-[rgba(0,0,0,0.8)]
               to-[rgba(0,0,0,0)]
             ">
-              <div class="absolute bottom-0 px-[0.67rem] lg:px-[0.1rem] sm:px-[1rem] md:px-[1.5rem] lg:px-[1rem] py-[0.6rem] lg:py-[0.58rem]">
+              <div class="absolute bottom-0 absolute bottom-0 px-[0.67rem] lg:px-[0.1rem] sm:px-[1rem] md:px-[1.5rem] lg:px-[1rem] py-[0.6rem] lg:py-[0.58rem]">
                 @php
                   $categoria = get_the_category($secundario1->ID);
                   $categoria_nombre = !empty($categoria) ? $categoria[0]->name : '';
@@ -76,10 +76,10 @@
                 <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h3 class="text-white text-[1.35rem] lg:text-[1.25rem] font-medium md:font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h3 class="text-white text-[1.35rem] lg:text-[1.25rem] font-medium md:font-semibold leading-[1.48rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $secundario1->post_title }}
                 </h3>
-                <p class="text-white text-[0.9rem] font-normal leading-[1.3rem] font-['Roboto Flex']">
+                <p class="text-white text-[0.9rem] font-normal leading-[1.39rem] font-['Roboto Flex']">
                   Por {{ get_the_author_meta('display_name', $secundario1->post_author) }}
                 </p>
               </div>
@@ -109,10 +109,10 @@
                 <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h3 class="text-white text-[1.35rem] lg:text-[1.25rem] font-medium md:font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h3 class="text-white text-[1.35rem] lg:text-[1.25rem] font-medium md:font-semibold leading-[1.48rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $secundario2->post_title }}
                 </h3>
-                <p class="text-white text-[0.9rem] font-normal leading-[1.3rem] font-['Roboto Flex']">
+                <p class="text-white text-[0.9rem] font-normal leading-[1.39rem] font-['Roboto Flex']">
                   Por {{ get_the_author_meta('display_name', $secundario2->post_author) }}
                 </p>
               </div>
