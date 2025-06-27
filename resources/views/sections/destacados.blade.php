@@ -53,7 +53,7 @@
     @endif
 
     {{-- Artículos Secundarios --}}
-    <div class="lg:col-span-4 space-y-6 lg:space-y-0">
+    <div class="lg:col-span-4 space-y-1 lg:space-y-0">
       @if($secundario1)
         <article class="relative h-[240px] lg:h-[250px] group overflow-hidden border-b-4 border-white">
           <a href="{{ get_permalink($secundario1->ID) }}" class="block h-full">
@@ -76,7 +76,7 @@
                 <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h3 class="text-white text-[1.2rem] font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h3 class="text-white text-[1.35rem] font-medium md:font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $secundario1->post_title }}
                 </h3>
                 <p class="text-white text-[0.9rem] font-normal leading-[1.3rem] font-['Roboto Flex']">
@@ -109,7 +109,7 @@
                 <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h3 class="text-white text-[1.2rem] font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
+                <h3 class="text-white text-[1.35rem] font-medium md:font-semibold leading-[1.4rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
                   {{ $secundario2->post_title }}
                 </h3>
                 <p class="text-white text-[0.9rem] font-normal leading-[1.3rem] font-['Roboto Flex']">
