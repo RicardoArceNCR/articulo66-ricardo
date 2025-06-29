@@ -19,7 +19,7 @@
             </div>
             <div class="space-y-2">
               <div class="flex">
-                <span class="inline-block w-fit px-2 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                <span class="inline-block w-fit px-3 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal1->post_author) }}
                 </span>
               </div>
@@ -44,7 +44,7 @@
             </div>
             <div class="space-y-2">
               <div class="flex">
-                <span class="inline-block w-fit px-2 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                <span class="inline-block w-fit px-3 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal2->post_author) }}
                 </span>
               </div>
@@ -69,7 +69,7 @@
             </div>
             <div class="space-y-2">
               <div class="flex">
-                <span class="inline-block w-fit px-2 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                <span class="inline-block w-fit px-3 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal3->post_author) }}
                 </span>
               </div>
@@ -94,7 +94,7 @@
             </div>
             <div class="space-y-2">
               <div class="flex">
-                <span class="inline-block w-fit px-2 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                <span class="inline-block w-fit px-3 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal4->post_author) }}
                 </span>
               </div>

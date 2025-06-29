@@ -19,6 +19,8 @@ export default {
       },
       fontFamily: {
         sans: ['Raleway', 'sans-serif'],
+        acumin: ['"Acumin Variable Concept"', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
     },
   },
