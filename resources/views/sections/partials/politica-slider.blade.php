@@ -24,11 +24,11 @@
           </div>
           <div class="mt-3">
             <div class="mb-3">
-              <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+              <span class="inline-block w-fit px-3 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                 Por {{ get_the_author_meta('display_name', get_the_author_meta('ID')) }}
               </span>
             </div>
-            <h3 class="text-[#666666] font-['Raleway'] text-[1.14rem] font-semibold leading-[1.3rem] tracking-[0.001rem] hover:underline mb-2">
+            <h3 class="text-black text-[1.1rem] md:text-[1rem] font-medium leading-[1.55rem] md:leading-[1.4rem] font-['Raleway'] no-underline hover:underline active:underline">
               {{ get_the_title() }}
             </h3>
             <p class="text-[#7F7F7F] text-[13px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3">
