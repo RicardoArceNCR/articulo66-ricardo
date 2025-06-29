@@ -23,8 +23,8 @@
                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
           </div>
           <div class="mt-2">
-            <div class="mb-3">
-              <span class="inline-block w-fit px-2 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+            <div class="mb-2">
+              <span class="inline-block w-fit px-3 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                 Por {{ get_the_author_meta('display_name', get_the_author_meta('ID')) }}
               </span>
             </div>
