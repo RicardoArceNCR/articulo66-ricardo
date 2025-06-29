@@ -71,11 +71,11 @@
       <?php endif; ?>
 
       {{-- Contenido principal --}}
-      <div class="e-content prose max-w-none" style="color:#424242; text-align:justify; font-family:'Acumin Variable Concept', sans-serif; font-size:20px; font-style:normal; font-weight:300; line-height:35px; letter-spacing:-0.4px;">
+      <div class="e-content prose max-w-none" style="color:#424242; text-align:justify; font-family:'Inter', sans-serif; font-size:20px; font-style:normal; font-weight:300; line-height:35px; letter-spacing:-0.4px;">
         <style>
           .e-content a {
             color: #09B2F5 !important;
-            font-family: 'Acumin Variable Concept', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 20px;
             font-style: normal;
             font-weight: 500;
