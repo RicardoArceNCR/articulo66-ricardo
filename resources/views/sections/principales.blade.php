@@ -12,18 +12,18 @@
       @if($principal1)
         <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
           <a href="{{ get_permalink($principal1->ID) }}" class="block no-underline">
-            <div class="relative h-[200px] md:h-[207px] overflow-hidden mb-4">
+            <div class="relative h-[200px] md:h-[207px] overflow-hidden mb-2">
               <img src="{{ get_the_post_thumbnail_url($principal1->ID, 'medium') }}" 
                    alt="{{ $principal1->post_title }}" 
                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="space-y-2">
               <div class="flex">
-                <span class="inline-block w-fit px-4 py-2 text-white text-[0.8rem] font-bold leading-none tracking-[0.060rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                <span class="inline-block w-fit px-2 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal1->post_author) }}
                 </span>
               </div>
-              <h3 class="text-black text-[1.1rem] md:text-[1.19rem] font-medium leading-[1.55rem] font-['Raleway'] no-underline hover:underline active:underline">
+              <h3 class="text-black text-[1.1rem] md:text-[1rem] font-medium leading-[1.55rem] md:leading-[1.4rem] font-['Raleway'] no-underline hover:underline active:underline">
                 {{ $principal1->post_title }}
               </h3>
               <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
@@ -37,18 +37,18 @@
       @if($principal2)
         <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
           <a href="{{ get_permalink($principal2->ID) }}" class="block no-underline">
-            <div class="relative h-[200px] md:h-[207px] overflow-hidden mb-4">
+            <div class="relative h-[200px] md:h-[207px] overflow-hidden mb-2">
               <img src="{{ get_the_post_thumbnail_url($principal2->ID, 'medium') }}" 
                    alt="{{ $principal2->post_title }}" 
                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="space-y-2">
               <div class="flex">
-                <span class="inline-block w-fit px-4 py-2 text-white text-[0.8rem] font-bold leading-none tracking-[0.060rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                <span class="inline-block w-fit px-2 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal2->post_author) }}
                 </span>
               </div>
-              <h3 class="text-black text-[1.1rem] md:text-[1.19rem] font-medium leading-[1.55rem] font-['Raleway'] no-underline hover:underline active:underline">
+              <h3 class="text-black text-[1.1rem] md:text-[1rem] font-medium leading-[1.55rem] md:leading-[1.4rem] font-['Raleway'] no-underline hover:underline active:underline">
                 {{ $principal2->post_title }}
               </h3>
               <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
@@ -62,18 +62,18 @@
       @if($principal3)
         <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
           <a href="{{ get_permalink($principal3->ID) }}" class="block no-underline">
-            <div class="relative h-[200px] md:h-[207px] overflow-hidden mb-4">
+            <div class="relative h-[200px] md:h-[207px] overflow-hidden mb-2">
               <img src="{{ get_the_post_thumbnail_url($principal3->ID, 'medium') }}" 
                    alt="{{ $principal3->post_title }}" 
                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="space-y-2">
               <div class="flex">
-                <span class="inline-block w-fit px-4 py-2 text-white text-[0.8rem] font-bold leading-none tracking-[0.060rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                <span class="inline-block w-fit px-2 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal3->post_author) }}
                 </span>
               </div>
-              <h3 class="text-black text-[1.1rem] md:text-[1.19rem] font-medium leading-[1.55rem] font-['Raleway'] no-underline hover:underline active:underline">
+              <h3 class="text-black text-[1.1rem] md:text-[1rem] font-medium leading-[1.55rem] md:leading-[1.4rem] font-['Raleway'] no-underline hover:underline active:underline">
                 {{ $principal3->post_title }}
               </h3>
               <p class="text-[#7F7F7F] text-[13px] md:text-[14px] font-light leading-[19px] tracking-[-0.13px] font-['acumin-variable'] line-clamp-3" style="font-variation-settings: 'slnt' 0, 'wdth' 100, 'wght' 194.2857;">
@@ -87,14 +87,14 @@
       @if($principal4)
         <article class="swiper-slide !w-[85%] md:!w-full md:px-0 group">
           <a href="{{ get_permalink($principal4->ID) }}" class="block no-underline">
-            <div class="relative h-[200px] md:h-[207px] overflow-hidden mb-4">
+            <div class="relative h-[200px] md:h-[207px] overflow-hidden mb-2">
               <img src="{{ get_the_post_thumbnail_url($principal4->ID, 'medium') }}" 
                    alt="{{ $principal4->post_title }}" 
                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="space-y-2">
               <div class="flex">
-                <span class="inline-block w-fit px-4 py-2 text-white text-[0.8rem] font-bold leading-none tracking-[0.060rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+                <span class="inline-block w-fit px-2 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
                   Por {{ get_the_author_meta('display_name', $principal4->post_author) }}
                 </span>
               </div>

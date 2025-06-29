@@ -51,7 +51,7 @@
                        class="w-full h-[180px] object-cover transition-transform duration-300 hover:scale-105">
                 </div>
                 <div class="p-4">
-                  <span class="inline-block w-fit px-4 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap mb-2 ">Por {{ get_the_author() }}</span>
+                  <span class="inline-block w-fit px-4 py-2 text-white text-[0.78rem] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap mb-2 ">Por {{ get_the_author() }}</span>
                   <h2 class="text-black text-[15px] md:text-[17px] font-medium leading-[21px] font-['Raleway'] no-underline hover:underline active:underline">
                     {{ get_the_title() }}
                   </h2>
