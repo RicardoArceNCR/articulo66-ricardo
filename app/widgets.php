@@ -39,7 +39,7 @@ class MasLeidasWidget extends \WP_Widget {
                 ?>
                 <article class="group">
                     <a href="<?php echo get_permalink($post->ID); ?>" class="flex gap-3 no-underline">
-                        <div class="w-[80px] h-[80px] flex-shrink-0 overflow-hidden rounded-full">
+                        <div class="w-[69px] h-[69px] flex-shrink-0 overflow-hidden rounded-full">
                             <?php if (has_post_thumbnail($post->ID)): ?>
                                 <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'thumbnail'); ?>" 
                                      alt="<?php echo esc_attr($post->post_title); ?>" 
