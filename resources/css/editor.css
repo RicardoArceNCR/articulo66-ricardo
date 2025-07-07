@@ -1,1 +1,145 @@
 @import "tailwindcss";
+
+/* Editor Styles */
+
+/* Contenedor principal del editor */
+.editor-styles-wrapper {
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilos para títulos */
+.editor-post-title__input {
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 2.5em !important;
+    color: #1D447A !important;
+}
+
+.wp-block-heading h1,
+.wp-block-heading h2,
+.wp-block-heading h3,
+.wp-block-heading h4,
+.wp-block-heading h5,
+.wp-block-heading h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: #1D447A;
+    margin: 1.5em 0 0.5em;
+}
+
+/* Estilos para párrafos */
+.wp-block-paragraph {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+}
+
+/* Estilos para enlaces */
+.wp-block a {
+    color: #1F63C1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.wp-block a:hover {
+    color: #1D447A;
+    text-decoration: underline;
+}
+
+/* Estilos para listas */
+.wp-block-list {
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.wp-block-list li {
+    margin-bottom: 0.5em;
+}
+
+/* Estilos para citas */
+.wp-block-quote {
+    border-left: 4px solid #1D447A;
+    padding-left: 1em;
+    margin: 1.5em 0;
+    font-style: italic;
+}
+
+/* Estilos para imágenes */
+.wp-block-image {
+    margin: 2em 0;
+}
+
+.wp-block-image figcaption {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+/* Estilos para tablas */
+.wp-block-table {
+    width: 100%;
+    margin: 2em 0;
+    border-collapse: collapse;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+}
+
+.wp-block-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+/* Estilos para botones */
+.wp-block-button__link {
+    background-color: #1F63C1;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.wp-block-button__link:hover {
+    background-color: #1D447A;
+}
+
+/* Estilos para separadores */
+.wp-block-separator {
+    border-top: 2px solid #ddd;
+    margin: 2em 0;
+}
+
+/* Estilos para código */
+.wp-block-code {
+    background-color: #f5f5f5;
+    padding: 1em;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Estilos para columnas */
+.wp-block-columns {
+    gap: 2em;
+    margin: 2em 0;
+}
+
+/* Ajustes de alineación */
+.alignfull {
+    margin-left: calc(-100vw / 2 + 100% / 2);
+    margin-right: calc(-100vw / 2 + 100% / 2);
+    max-width: 100vw;
+    width: 100vw;
+}
+
+.alignwide {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    max-width: calc(100% + 4rem);
+    width: calc(100% + 4rem);
+}

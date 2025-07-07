@@ -125,6 +125,16 @@
         {{-- Espacio publicitario --}}
         <div class="bg-[#f8f9fa] p-4 rounded-lg text-center">
           <span class="text-[#6c757d] text-sm">Espacio publicitario</span>
+          <!-- LATERAL-A66 -->
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-9534088309545039"
+data-ad-slot="4390178240"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
         </div>
       </div>
     </div>

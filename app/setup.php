@@ -128,6 +128,10 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    // Agregar soporte para el editor
+    add_theme_support('editor-styles');
+    add_editor_style('css/editor.css');
 }, 20);
 
 /**
