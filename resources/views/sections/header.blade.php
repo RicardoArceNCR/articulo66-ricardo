@@ -1,10 +1,6 @@
 {{-- Banner móvil --}}
 <div class="block lg:hidden w-full">
-  <a href="https://cdnicaraguense.org" target="_blank" class="block">
-    <img src="{{ get_theme_file_uri('public/images/banner-mobile.jpg') }}" 
-         alt="Conocer tus derechos es el primer paso hacia la libertad" 
-         class="w-full h-auto">
-  </a>
+
 </div>
 
 {{-- Barra superior con fecha y redes sociales --}}
@@ -98,11 +94,18 @@
 {{-- Logo y Menú Principal --}}
 <div class="bg-white">
   {{-- Banner publicitario --}}
-  <div class="hidden lg:block bg-[#F5F5F5]">
+  <div class=" bg-[#F5F5F5]">
     <div class="container mx-auto">
-      <a href="https://cdnicaraguense.org" target="_blank" class="block flex justify-center">
-        <img src="https://placehold.co/1200x120" alt="Publicidad" class="h-auto object-cover">
-      </a>
+      <!-- Cabecera-A66 -->
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-9534088309545039"
+data-ad-slot="7635288681"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     </div>
   </div>
 

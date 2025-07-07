@@ -21,13 +21,16 @@ class MasLeidasWidget extends \WP_Widget {
         // Obtener las 3 noticias más leídas de los últimos 30 días
         $posts = $wpdb->get_results($wpdb->prepare(
             "SELECT p.ID, p.post_title, p.post_author, SUM(v.visitas) as total_visitas
-            FROM $tabla_visitas v
+            FROM {$wpdb->prefix}articulo66_visitas v
             JOIN {$wpdb->posts} p ON v.post_id = p.ID
-            WHERE v.fecha >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
-            AND p.post_status = 'publish'
+            WHERE v.fecha >= DATE_SUB(CURDATE(), INTERVAL %d DAY)
+            AND p.post_status = %s
             GROUP BY p.ID
             ORDER BY total_visitas DESC
-            LIMIT 3"
+            LIMIT %d",
+            30,
+            'publish',
+            3
         ));
 
         if (!empty($posts)) {
