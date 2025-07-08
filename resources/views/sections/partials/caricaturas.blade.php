@@ -29,7 +29,7 @@
       </div>
     
     @if(isset($caricaturas) && $caricaturas->have_posts())
-      <div class="space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 lg:space-y-4">
         @while($caricaturas->have_posts()) @php($caricaturas->the_post())
           <article class="group">
             <a href="{{ get_permalink() }}" class="block">
