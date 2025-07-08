@@ -108,11 +108,11 @@
        {{-- Widget de Más Leídas --}}
        <div class="mas-leidas">
         <div class="flex items-center justify-center gap-2 mb-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="48" viewBox="0 0 25 48" fill="none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="36" viewBox="0 0 25 48" fill="none">
             <path d="M15.8573 16.8444C17.5419 14.7909 20.5868 12.7216 25 10.6523L19.5982 0.400757C12.4328 3.54836 7.37108 7.1796 4.42897 11.2866C1.47896 15.3935 0 20.9989 0 28.1029V47.4008H25V24.1307H13.0497C13.2395 21.3319 14.1806 18.8979 15.8652 16.8444H15.8573Z" fill="#1BC6EB"/>
           </svg>
           <h3 class="text-[#1D447A] font-['Raleway'] text-[31.021px] font-extrabold leading-[43.66px] tracking-[-0.31px] uppercase">MÁS LEÍDAS</h3>
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="48" viewBox="0 0 25 48" fill="none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="36" viewBox="0 0 25 48" fill="none">
             <path d="M9.14269 30.9571C7.45809 33.0106 4.41316 35.0799 -2.91848e-06 37.1492L5.40177 47.4008C12.5672 44.2532 17.6289 40.6219 20.571 36.515C23.521 32.408 25 26.8026 25 19.6987L25 0.400761L2.94173e-07 0.400758L-1.74016e-06 23.6708L11.9503 23.6708C11.7605 26.4696 10.8194 28.9036 9.13477 30.9571L9.14269 30.9571Z" fill="#1BC6EB"/>
           </svg>
         </div>

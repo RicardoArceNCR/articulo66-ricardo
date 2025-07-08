@@ -1,7 +1,7 @@
 {{-- Sección de Especiales --}}
 <section class="container mx-auto px-4 py-8">
   <div class="mb-8">
-    <h2 class="text-[#1D447A] font-['Raleway'] text-[23px] md:text-[31.021px] font-[800] leading-[43.66px] tracking-[-0.23px] md:tracking-[-0.31px] uppercase">ESPECIALES</h2>
+    <h2 class="text-[#1D447A] font-['Raleway'] text-[1.8rem] md:text-[2.20rem] font-[800] leading-[43.66px] tracking-[-0.23px] md:tracking-[-0.31px] uppercase">ESPECIALES</h2>
     <div class="flex w-full mb-6">
       <div class="w-[50px] h-[5px] bg-[#1BC6EB] flex-shrink-0"></div>
       <div class="flex-grow h-[5px] bg-[#EBEBEB]"></div>
