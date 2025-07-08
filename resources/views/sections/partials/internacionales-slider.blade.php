@@ -24,7 +24,7 @@
           </div>
           <div class="mt-2">
             <div class="mb-2">
-              <span class="inline-block w-fit px-3 py-2 text-white text-[13px] font-bold leading-none tracking-[0.12px] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway'] rounded-sm whitespace-nowrap">
+              <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.90rem] font-semibold rounded-xs leading-[1rem] tracking-[0.01rem] bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                 Por {{ get_the_author_meta('display_name', get_the_author_meta('ID')) }}
               </span>
             </div>
