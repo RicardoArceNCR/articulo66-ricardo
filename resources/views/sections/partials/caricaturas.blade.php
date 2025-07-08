@@ -13,13 +13,20 @@
 @endphp
 
 @if($categoria_caricaturas)
-  <div class="bg-white p-4 rounded-lg">
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="text-[#1D447A] font-['Raleway'] text-[18px] font-bold leading-[25px] tracking-[-0.18px] uppercase">CARICATURAS</h3>
-      <a href="{{ get_category_link($categoria_caricaturas->term_id) }}" class="text-[#1D447A] font-['Raleway'] text-[12px] font-bold leading-[25px] tracking-[-0.12px] uppercase hover:underline">
-        VER TODAS LAS CARICATURAS
+  <div class="bg-white rounded-lg">
+    <div class="flex items-center justify-between">
+      <h3 class="text-[#1D447A] font-['Raleway'] text-[23px] md:text-[31.021px] font-[800] leading-[43.66px] tracking-[-0.23px] md:tracking-[-0.31px] uppercase mb-2">CARICATURAS</h3>
+      <a href="{{ get_category_link($categoria_caricaturas->term_id) }}" class="ml-auto text-right text-[#1D447A] font-['Raleway'] text-[1.1rem] font-[800] leading-[25px] tracking-[-0.12px] uppercase hover:underline
+          bg-[#f8f9fa] px-2 py-1 rounded-full flex items-center justify-center w-[32px] h-[32px]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="19" viewBox="0 0 12 19" fill="none" class="inline-block">
+          <path d="M2.61204 19H2.57522L0 16.3519L6.77076 9.51336L0 2.64812L2.57522 0H2.61204L12 9.48664L2.61204 19Z" fill="#1D447A"/>
+        </svg>
       </a>
     </div>
+    <div class="flex w-full mb-6">
+        <div class="w-[50px] h-[5px] bg-[#1BC6EB] flex-shrink-0"></div>
+        <div class="flex-grow h-[5px] bg-[#EBEBEB]"></div>
+      </div>
     
     @if(isset($caricaturas) && $caricaturas->have_posts())
       <div class="space-y-4">
