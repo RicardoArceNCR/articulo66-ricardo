@@ -3,7 +3,7 @@
     mx-auto px-2 py-8
     max-w-[99%]
     sm:max-w-[98%]
-    md:max-w-[96%]
+    md:max-w-[80%]
     lg:max-w-[94%]
     xl:max-w-[84%]
   ">
@@ -39,7 +39,7 @@
                 <span class="inline-block px-2 py-1 mb-2 text-white text-center text-[0.78rem] font-extrabold rounded-xs leading-[1rem] tracking-[0.12rem] uppercase bg-gradient-to-r from-[#1D447A] to-[#1F63C1] font-['Raleway']">
                   {{ $categoria_nombre }}
                 </span>
-                <h2 class="text-[1.25rem] sm:text-[1.875rem] md:text-[1.35rem] lg:text-[2.5rem] text-white font-medium leading-[1.5rem] sm:leading-[2rem] md:leading-[2.8rem] lg:leading-[2.6rem] font-['Raleway'] mb-[0.29rem] lg:mb-[0.5rem] no-underline hover:underline">
+                <h2 class="text-[1.25rem] sm:text-[1.875rem] md:text-[1.35rem] lg:text-[2.5rem] text-white font-medium md:font-semibold leading-[1.5rem] sm:leading-[2rem] md:leading-[1.8rem] lg:leading-[2.6rem] font-['Raleway'] mb-[0.29rem] lg:mb-[0.5rem] no-underline hover:underline">
                   {{ $principal->post_title }}
                 </h2>
                 <p class="text-white text-base font-medium leading-[1.4rem] mb-[0.1rem] lg:mb-[1rem] font-['Roboto Flex']">
