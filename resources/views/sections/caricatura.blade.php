@@ -1,6 +1,6 @@
 {{-- Sección de Caricaturas --}}
 <div>
-  <h3 class="text-[#1D447A] font-['Raleway'] text-[23px] md:text-[31.021px] font-[800] leading-[43.66px] tracking-[-0.23px] md:tracking-[-0.31px] uppercase mb-2">CARICATURAS</h3>
+  <h3 class="text-[#1D447A] font-['Raleway'] text-[2rem] md:text-[2.6rem] lg:text-[2.23rem] font-[800] leading-[43.66px] tracking-[-0.23px] md:tracking-[-0.31px] uppercase mb-2">CARICATURAS</h3>
   <div class="flex w-full mb-6">
     <div class="w-[50px] h-[5px] bg-[#1BC6EB] flex-shrink-0"></div>
     <div class="flex-grow h-[5px] bg-[#EBEBEB]"></div>

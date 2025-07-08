@@ -13,7 +13,7 @@
 @endphp
 
 @if($categoria_nacionales && isset($secundarias) && $secundarias->have_posts())
-  <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+  <div class="md:col-span-2 grid md:grid-cols-2 gap-6">
     @while($secundarias->have_posts()) @php($secundarias->the_post())
       <article class="flex gap-4 items-start">
         <div class="w-[105px] h-[80px] flex-shrink-0">

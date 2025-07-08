@@ -15,7 +15,7 @@
 @if($categoria_caricaturas)
   <div class="bg-white rounded-lg">
     <div class="flex items-center justify-between">
-      <h3 class="text-[#1D447A] font-['Raleway'] text-[23px] md:text-[31.021px] font-[800] leading-[43.66px] tracking-[-0.23px] md:tracking-[-0.31px] uppercase mb-2">CARICATURAS</h3>
+      <h3 class="text-[#1D447A] font-['Raleway'] text-[2rem] md:text-[2.6rem] lg:text-[2.23rem] font-[800] leading-[43.66px] tracking-[-0.23px] md:tracking-[-0.31px] uppercase mb-2">CARICATURAS</h3>
       <a href="{{ get_category_link($categoria_caricaturas->term_id) }}" class="ml-auto text-right text-[#1D447A] font-['Raleway'] text-[1.1rem] font-[800] leading-[25px] tracking-[-0.12px] uppercase hover:underline
           bg-[#f8f9fa] px-2 py-1 rounded-full flex items-center justify-center w-[32px] h-[32px]">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="19" viewBox="0 0 12 19" fill="none" class="inline-block">

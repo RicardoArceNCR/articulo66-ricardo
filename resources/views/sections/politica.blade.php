@@ -2,7 +2,7 @@
 <section class="container mx-auto px-4 py-8">
   <div class="flex items-center justify-between mb-2 relative">
     <div class="flex-1">
-      <h2 class="text-[#1D447A] font-['Raleway'] text-[23px] md:text-[31.021px] font-[800] leading-[43.66px] tracking-[-0.23px] md:tracking-[-0.31px] uppercase">POLÍTICA</h2>
+      <h2 class="text-[#1D447A] font-['Raleway'] text-[2rem] md:text-[2.6rem] lg:text-[2.23rem] font-[800] leading-[43.66px] tracking-[-0.23px] md:tracking-[-0.31px] uppercase">POLÍTICA</h2>
     </div>
     
     {{-- Controles del Slider (Desktop) --}}
