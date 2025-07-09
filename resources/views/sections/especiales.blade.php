@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="flex flex-wrap justify-between">
+  <div class="flex flex-wrap justify-center md:justify-between">
     @php
       $especial1 = get_field('especiales_1', 'option');
       $especial2 = get_field('especiales_2', 'option');

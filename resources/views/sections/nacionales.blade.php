@@ -36,7 +36,7 @@
                      class="w-full h-full object-cover">
                 <div class="absolute bottom-0 left-0 right-0 h-[195px] bg-gradient-to-b from-transparent to-black"></div>
                 <div class="absolute bottom-0 absolute bottom-0 px-[0.67rem] lg:px-[0.1rem] sm:px-[1rem] md:px-[1.5rem] lg:px-[1rem] py-[0.6rem] lg:py-[0.58rem]">
-                  <h3 class="text-white text-[1.35rem] lg:text-[1.25rem] font-medium md:font-semibold xl:font-medium leading-[1.48rem] tracking-[-0.18px] font-['Raleway'] mb-2 no-underline hover:underline">
+                  <h3 class="text-white font-['Raleway'] text-[19px] font-semibold leading-[1.4rem] tracking-[0.004rem] mb-2">
                     {{ $destacado1->post_title }}
                   </h3>
                   <span class="text-white text-[0.9rem] font-normal leading-[1.39rem] font-['Roboto Flex']">
