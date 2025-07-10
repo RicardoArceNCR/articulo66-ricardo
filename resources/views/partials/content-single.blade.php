@@ -56,26 +56,19 @@
         </div>
       </div>
 
-      <div class="mb-6 w-full h-auto rounded-lg">
-      @if(get_the_youtube_iframe())
-        {!! get_the_youtube_iframe() !!}
-      @elseif(get_the_podcast_iframe())
-        {!! get_the_podcast_iframe() !!}
-      @else
-        {{-- Imagen destacada --}}
-        @if(has_post_thumbnail())
-          
-            <img src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'large')); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-full h-auto rounded-lg" />
-            <?php
-            $thumb_id = get_post_thumbnail_id();
-            $thumb_post = $thumb_id ? get_post($thumb_id) : null;
-            if ($thumb_post && $thumb_post->post_excerpt) {
-                echo '<div class="text-[#7F7F7F] text-[16px] italic font-normal leading-[30px] font-[\'Raleway\'] mt-2">' . esc_html($thumb_post->post_excerpt) . '</div>';
-            }
-            ?>
-        @endif
-      @endif
-      </div>
+      {{-- Imagen destacada --}}
+      <?php if (has_post_thumbnail()): ?>
+        <div class="mb-6">
+          <img src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'large')); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-full h-auto rounded-lg" />
+          <?php
+          $thumb_id = get_post_thumbnail_id();
+          $thumb_post = $thumb_id ? get_post($thumb_id) : null;
+          if ($thumb_post && $thumb_post->post_excerpt) {
+              echo '<div class="bajada">' . esc_html($thumb_post->post_excerpt) . '</div>';
+          }
+          ?>
+        </div>
+      <?php endif; ?>
 
       {{-- Contenido principal --}}
       <div class="e-content prose max-w-none" style="color:#424242; text-align:justify; font-family:'Inter', sans-serif; font-size:20px; font-style:normal; font-weight:300; line-height:35px; letter-spacing:-0.4px;">
