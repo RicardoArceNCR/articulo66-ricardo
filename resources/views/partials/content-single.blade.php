@@ -15,14 +15,14 @@
 
       {{-- Título --}}
       <header>
-        <h1 class="text-[#1D447A] font-['Raleway'] text-[43px] font-extrabold leading-[53px]"><?php echo $title; ?></h1>
+        <h1 class="titulo-articulo"><?php echo $title; ?></h1>
       </header>
 
       {{-- Extracto/Bajada --}}
       <?php
       $excerpt = get_the_excerpt();
       if (!empty($excerpt)) {
-          echo '<div class="text-[#7F7F7F] text-[22px] italic font-normal leading-[34px] tracking-[0.22px] font-[\'Raleway\'] mb-4">' . esc_html(wp_strip_all_tags($excerpt)) . '</div>';
+          echo '<div class="resumen-articulo mb-4">' . esc_html(wp_strip_all_tags($excerpt)) . '</div>';
       }
       ?>
 
