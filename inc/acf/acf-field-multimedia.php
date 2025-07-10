@@ -83,7 +83,7 @@ function get_the_youtube_iframe($post_id = null, $args = []) {
     $defaults = [
         'width' => '100%',
         'height' => '100%',
-        'class' => 'absolute top-0 left-0 w-full h-full',
+        'class' => 'top-0 left-0 w-full h-full',
         'allowfullscreen' => true,
         'frameborder' => '0',
         'allow' => 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',

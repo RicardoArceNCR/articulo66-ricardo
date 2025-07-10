@@ -93,6 +93,56 @@ function get_the_podcast_iframe($post_id = null, $args = []) {
     return '<p>Este podcast no se puede mostrar automáticamente. <a href="' . esc_url($value) . '" target="_blank">Escúchalo aquí</a>.</p>';
 }
 
+/**
+ * Summary of get_the_podcast_thumbnail
+ * @param mixed $post_id
+ * @return string|null
+ */
+function get_the_podcast_thumbnail($post_id = null) {
+    $post_id = $post_id ?: get_the_ID();
+    $value = get_field('podcast_embed', $post_id);
+
+    if (!$value) {
+        // Imagen genérica si no hay valor
+        return 'https://placehold.co/160x90?text=Podcast';
+    }
+
+    // Si es un iframe, extraer el src
+    if (stripos($value, '<iframe') !== false) {
+        if (preg_match('/src="([^"]+)"/', $value, $srcMatch)) {
+            $value = $srcMatch[1];
+        }
+    }
+
+    // Spotify
+    if (strpos($value, 'spotify.com') !== false) {
+        if (preg_match('/episode\/([a-zA-Z0-9]+)/', $value, $matches)) {
+            return 'https://placehold.co/160x90?text=Podcast';
+        }
+    }
+
+    // Apple Podcasts
+    if (strpos($value, 'podcasts.apple.com') !== false) {
+        return 'https://placehold.co/160x90?text=Podcast';
+    }
+
+    // iVoox
+    if (strpos($value, 'ivoox.com') !== false) {
+        return 'https://placehold.co/160x90?text=Podcast';
+    }
+
+    // YouTube
+    if (strpos($value, 'youtube.com') !== false || strpos($value, 'youtu.be') !== false) {
+        if (preg_match('/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $value, $matches)) {
+            $video_id = $matches[1];
+            return sprintf('https://img.youtube.com/vi/%s/hqdefault.jpg', $video_id);
+        }
+    }
+
+    // Imagen genérica si no se detecta ninguna plataforma
+    return 'https://placehold.co/160x90?text=Podcast';
+}
+
 
 add_action( 'acf/include_fields', function() {
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
