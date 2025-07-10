@@ -3,7 +3,7 @@
   {{-- Navegación Principal --}}
   <div class="container mx-auto px-4">
     <nav class="mb-8">
-      <ul class="flex flex-wrap justify-center gap-8">
+      <ul class="flex flex-col items-center gap-4 py-4 md:flex-row md:flex-wrap md:justify-center md:gap-8">
         <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600]">PORTADA</a></li>
         <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600]">NACIONALES</a></li>
         <li><a href="#" class="text-white hover:text-[#1BC6EB] transition-colors font-['Raleway'] font-[600] underline">FINANZAS</a></li>

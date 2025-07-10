@@ -1,11 +1,11 @@
 {{-- Sección de Artículos Destacados --}}
 <section class="
     mx-auto px-2 py-8
-    max-w-[99%]
-    sm:max-w-[98%]
-    md:max-w-[80%]
-    lg:max-w-[94%]
-    xl:max-w-[84%]
+    w-full
+    sm:max-w-[640px]
+    md:max-w-[800px]
+    lg:max-w-[1000px]
+    xl:max-w-[1200px]
   ">
   <div class="grid grid-cols-1 gap-2 lg:grid-cols-12 lg:gap-0">
     {{-- Artículo Principal --}}

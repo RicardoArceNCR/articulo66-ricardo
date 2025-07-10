@@ -89,6 +89,28 @@ nav ul li a:active {
   padding: 8px 16px;
 }
 
+/* ————————————————————————————— */
+/* Estilo para centrar los embeds de Twitter */
+@layer components {
+  .wp-block-embed-twitter {
+    @apply w-full my-10; /* espacio vertical arriba y abajo */
+  }
+
+  .wp-block-embed-twitter > .wp-block-embed__wrapper {
+    @apply w-full flex justify-center;
+  }
+
+  .wp-block-embed-twitter iframe,
+  .wp-block-embed-twitter blockquote {
+    @apply w-full max-w-2xl; /* mayor control en pantallas grandes */
+  }
+
+  /* Asegura que figure no tenga padding/margin por defecto */
+  figure.wp-block-embed-twitter {
+    @apply w-full;
+  }
+}
+
 .btn-especiales-text {
   color: #1BC6EB;
   text-align: right;
