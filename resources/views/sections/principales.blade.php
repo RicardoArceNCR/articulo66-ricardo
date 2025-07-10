@@ -1,6 +1,6 @@
 {{-- Sección de Noticias Principales --}}
 <section class="container mx-auto px-0 pt-6 pb-4 overflow-hidden">
-  <div class="swiper-principales md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4">
+  <div class="swiper-principales lg:grid-cols-3 md:gap-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6">
     <div class="swiper-wrapper md:!contents">
       @php
         $principal1 = get_field('principal_1', 'option');
