@@ -80,23 +80,9 @@ nav ul li a:active {
     @apply underline;
   }
 }
-/* Bajada */
-.bajada {
-  @apply text-[#7F7F7F] text-[0.98rem] italic font-normal leading-[1.4rem] font-['Raleway'] mt-2;
-}
-
-/* Estilos para el bloque de embed */
-.wp-block-embed-art-culo-66 {
-  @apply w-full my-10 px-4;
-}
-
-.wp-block-embed-art-culo-66 > .wp-block-embed__wrapper {
-  @apply flex justify-center;
-}
-
-.wp-block-embed-art-culo-66 iframe,
-.wp-block-embed-art-culo-66 blockquote {
-  @apply w-full max-w-2xl;
+/* Título de entrada */
+.titulo-articulo {
+  @apply text-[#1D447A] text-[2.9rem] font-extrabold leading-[53px] font-['Raleway'] mb-2;
 }
 
 /* Botón ESPECIALES */
@@ -105,6 +91,56 @@ nav ul li a:active {
   border: 1.5px solid #09B2F5;
   background: #1D447A;
   padding: 8px 16px;
+}
+
+/* Título de entrada */
+.titulo-articulo {
+  @apply text-[#1D447A] text-[2.9rem] font-extrabold leading-[53px] font-['Raleway'] mb-2;
+}
+
+/* Bajada */
+.bajada {
+  @apply text-[#7F7F7F] text-[0.98rem] italic font-normal leading-[1.4rem] font-['Raleway'] mt-2;
+}
+
+/* Centrar blocks */
+.wp-block-embed {
+  @apply w-full my-10 px-4;
+}
+
+.wp-block-embed > .wp-block-embed__wrapper {
+  @apply flex justify-center;
+}
+
+.wp-block-embed iframe,
+.wp-block-embed blockquote {
+  @apply w-full max-w-2xl;
+}
+
+/* ————————————————————————————— */
+/* Estilo para centrar los embeds de Twitter */
+@layer components {
+  .resumen-articulo {
+    @apply text-[#7F7F7F] text-[1.3rem] italic font-normal leading-[2rem] tracking-[0.22px] font-['Raleway'];
+  }
+
+  .wp-block-embed-twitter {
+    @apply w-full my-10; /* espacio vertical arriba y abajo */
+  }
+
+  .wp-block-embed-twitter > .wp-block-embed__wrapper {
+    @apply w-full flex justify-center;
+  }
+
+  .wp-block-embed-twitter iframe,
+  .wp-block-embed-twitter blockquote {
+    @apply w-full max-w-2xl; /* mayor control en pantallas grandes */
+  }
+
+  /* Asegura que figure no tenga padding/margin por defecto */
+  figure.wp-block-embed-twitter {
+    @apply w-full;
+  }
 }
 
 .btn-especiales-text {
