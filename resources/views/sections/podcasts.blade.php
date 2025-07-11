@@ -63,16 +63,13 @@
                     data-title="{{ $title }}"
                     data-url="{{ $url }}">
                     <div class="relative w-[160px] h-[90px] flex-shrink-0">
-                        @if(has_post_thumbnail($post->ID))
-                            {!! get_the_post_thumbnail($post->ID, 'medium', ['class' => 'w-full h-full object-cover']) !!}
+                        
+                        @if(get_the_podcast_thumbnail($post->ID))
+                            <img src="{{ get_the_podcast_thumbnail($post->ID) }}" alt="{{ get_the_title() }}" class="w-full h-full object-cover">
                         @else
-                            <img src="https://placehold.co/160x90" alt="{{ $title }}" class="w-full h-full object-cover">
+                            <img src="https://placehold.co/160x90" alt="{{ get_the_title() }}" class="w-full h-full object-cover">
                         @endif
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="white">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </div>
+
                     </div>
                     <div>
                         <h4 class="text-white font-['Raleway'] text-[14px] font-semibold leading-[18px] mb-1">
